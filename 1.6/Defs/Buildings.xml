@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef ParentName="FurnitureBase" Name="CE_CapturePlatformBase" Abstract="True">
+    <thingClass>CaptureExpansion.Building_RestraintPlatform</thingClass>
+    <containedPawnsSelectable>true</containedPawnsSelectable>
+    <passability>PassThroughOnly</passability>
+    <drawerType>RealtimeOnly</drawerType>
+    <tickerType>Normal</tickerType>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <uiOrder>100</uiOrder>
+    <pathCost>30</pathCost>
+    <canOverlapZones>false</canOverlapZones>
+    <defaultPlacingRot>North</defaultPlacingRot>
+    <minMonolithLevel>1</minMonolithLevel>
+    <designationCategory>Anomaly</designationCategory>
+    <building>
+      <buildingTags>
+        <li>Anomaly</li>
+      </buildingTags>
+    </building>
+    <comps>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities />
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="CaptureExpansion.RestraintExtension" />
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef ParentName="CE_CapturePlatformBase">
+    <defName>CE_RestraintChair</defName>
+    <label>restraint chair</label>
+    <description>todo</description>
+    <graphicData>
+      <texPath>Things/Building/DungeonProps/Misc/RusticCuffsChair</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <uiIconScale>0.5</uiIconScale>
+    <size>(1,1)</size>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>40</costStuffCount>
+    <statBases>
+      <WorkToBuild>1000</WorkToBuild>
+      <Mass>25</Mass>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_EntityHolderPlatform">
+        <containmentFactor>0.5</containmentFactor>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="CE_CapturePlatformBase">
+    <defName>CE_RestraintRack</defName>
+    <label>restraint rack</label>
+    <description>todo</description>
+    <graphicData>
+      <texPath>Things/Building/DungeonProps/Misc/TortureRack</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <uiIconScale>0.75</uiIconScale>
+    <size>(1,2)</size>
+    <costList>
+      <WoodLog>60</WoodLog>
+    </costList>
+    <statBases>
+      <WorkToBuild>1200</WorkToBuild>
+      <Mass>30</Mass>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_EntityHolderPlatform">
+        <containmentFactor>0.5</containmentFactor>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="CE_CapturePlatformBase">
+    <defName>CE_RestraintPole</defName>
+    <label>restraint pole</label>
+    <description>todo</description>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <graphicData>
+      <texPath>Things/Building/DungeonProps/Misc/Pole/Pole_A</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,3)</drawSize>
+      <drawOffset>(0,0,0.1)</drawOffset>
+    </graphicData>
+    <uiIconScale>0.75</uiIconScale>
+    <size>(1,1)</size>
+    <rotatable>false</rotatable>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>25</costStuffCount>
+    <statBases>
+      <WorkToBuild>800</WorkToBuild>
+      <Mass>15</Mass>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_EntityHolderPlatform">
+        <containmentFactor>0.5</containmentFactor>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="CE_CapturePlatformBase">
+    <defName>CE_Pillory</defName>
+    <label>pillory</label>
+    <description>todo</description>
+    <graphicData>
+      <texPath>Things/Building/DungeonProps/Misc/Pillory</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <uiIconScale>0.75</uiIconScale>
+    <size>(1,1)</size>
+    <costList>
+      <WoodLog>50</WoodLog>
+    </costList>
+    <statBases>
+      <WorkToBuild>900</WorkToBuild>
+      <Mass>20</Mass>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_EntityHolderPlatform">
+        <containmentFactor>0.5</containmentFactor>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BedBase">
+    <defName>CE_WallMountedCot</defName>
+    <label>wall-mounted cot</label>
+    <description>todo</description>
+    <graphicData>
+      <texPath>Things/Building/DungeonProps/Misc/RusticPrisonBed</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,2)</drawSize>
+    </graphicData>
+    <size>(1,1)</size>
+    <statBases>
+      <WorkToBuild>800</WorkToBuild>
+      <Mass>20</Mass>
+      <Comfort>0.4</Comfort>
+      <BedRestEffectiveness>0.4</BedRestEffectiveness>
+    </statBases>
+    <building>
+      <bed_showSleeperBody>True</bed_showSleeperBody>
+      <bed_humanlike>True</bed_humanlike>
+    </building>
+    <comps>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities />
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>CaptureExpansion.PlaceWorker_WallCot</li>
+    </placeWorkers>
+  </ThingDef>
+
+  <ThingDef ParentName="BedBase" Name="CE_CageBase" Abstract="True">
+    <thingClass>CaptureExpansion.Building_Cage</thingClass>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <designationCategory>Anomaly</designationCategory>
+    <defaultPlacingRot>North</defaultPlacingRot>
+    <rotatable>false</rotatable>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <WorkToBuild>1000</WorkToBuild>
+      <Mass>20</Mass>
+      <Comfort>0.3</Comfort>
+      <BedRestEffectiveness>0.6</BedRestEffectiveness>
+    </statBases>
+    <building>
+      <bed_showSleeperBody>True</bed_showSleeperBody>
+      <bed_humanlike>True</bed_humanlike>
+    </building>
+    <comps>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities />
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="CE_CageBase">
+    <defName>CE_CageSmall</defName>
+    <label>small cage</label>
+    <description>todo</description>
+    <size>(2,2)</size>
+    <graphicData>
+      <texPath>Things/Building/DungeonProps/LargeCages/CageBase_Metal_2x2</texPath>
+      <drawSize>(4,4)</drawSize>
+    </graphicData>
+    <modExtensions>
+      <li Class="CaptureExpansion.CageExtension">
+        <topGraphicData>
+          <texPath>Things/Building/DungeonProps/LargeCages/CageTop_Flat_2x2</texPath>
+          <graphicClass>Graphic_Single</graphicClass>
+          <drawSize>(4,4)</drawSize>
+          <shaderType>Transparent</shaderType>
+        </topGraphicData>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef ParentName="CE_CageBase">
+    <defName>CE_CageMedium</defName>
+    <label>medium cage</label>
+    <description>todo</description>
+    <size>(3,2)</size>
+    <graphicData>
+      <texPath>Things/Building/DungeonProps/LargeCages/CageBase_Metal_3x2_north</texPath>
+      <drawSize>(5,4)</drawSize>
+    </graphicData>
+    <modExtensions>
+      <li Class="CaptureExpansion.CageExtension">
+        <topGraphicData>
+          <texPath>Things/Building/DungeonProps/LargeCages/CageTop_Flat_3x2_north</texPath>
+          <graphicClass>Graphic_Single</graphicClass>
+          <drawSize>(5,4)</drawSize>
+          <shaderType>Transparent</shaderType>
+        </topGraphicData>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef ParentName="CE_CageBase">
+    <defName>CE_CageLarge</defName>
+    <label>large cage</label>
+    <description>todo</description>
+    <size>(3,3)</size>
+    <graphicData>
+      <texPath>Things/Building/DungeonProps/LargeCages/CageBase_Metal_3x3</texPath>
+      <drawSize>(5,5)</drawSize>
+    </graphicData>
+    <modExtensions>
+      <li Class="CaptureExpansion.CageExtension">
+        <topGraphicData>
+          <texPath>Things/Building/DungeonProps/LargeCages/CageTop_Flat_3x3</texPath>
+          <graphicClass>Graphic_Single</graphicClass>
+          <drawSize>(5,5)</drawSize>
+          <shaderType>Transparent</shaderType>
+        </topGraphicData>
+      </li>
+    </modExtensions>
+  </ThingDef>
+</Defs>

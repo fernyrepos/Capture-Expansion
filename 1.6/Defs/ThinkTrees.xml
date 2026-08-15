@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThinkTreeDef>
+    <defName>CE_RestrainedToBed</defName>
+    <insertTag>Humanlike_PostMentalState</insertTag>
+    <insertPriority>100</insertPriority>
+    <thinkRoot Class="CaptureExpansion.ThinkNode_ConditionalRestrained">
+      <subNodes>
+        <li Class="CaptureExpansion.JobGiver_RestrainedLayDown" />
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+
+  <ThinkTreeDef>
+    <defName>CE_Caged</defName>
+    <insertTag>Humanlike_PostMentalState</insertTag>
+    <insertPriority>99</insertPriority>
+    <thinkRoot Class="CaptureExpansion.ThinkNode_ConditionalCaged">
+      <subNodes>
+        <li Class="ThinkNode_PrioritySorter">
+          <subNodes>
+            <li Class="JobGiver_GetFood" />
+            <li Class="JobGiver_GetRest" />
+          </subNodes>
+        </li>
+        <li Class="CaptureExpansion.JobGiver_WanderCage" />
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+</Defs>
