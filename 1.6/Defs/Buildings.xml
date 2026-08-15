@@ -31,7 +31,10 @@
   <ThingDef ParentName="CE_CapturePlatformBase">
     <defName>CE_RestraintChair</defName>
     <label>restraint chair</label>
-    <description>todo</description>
+    <description>A chair built for restraining prisoners. Has mounted cuffs to prevent movement of the arms.</description>
+    <researchPrerequisites>
+      <li>CE_RestraintChairResearch</li>
+    </researchPrerequisites>
     <graphicData>
       <texPath>Things/Building/DungeonProps/Misc/RusticCuffsChair</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
@@ -51,7 +54,7 @@
     </statBases>
     <comps>
       <li Class="CompProperties_EntityHolderPlatform">
-        <containmentFactor>0.5</containmentFactor>
+        <containmentFactor>0.4</containmentFactor>
       </li>
     </comps>
   </ThingDef>
@@ -59,7 +62,10 @@
   <ThingDef ParentName="CE_CapturePlatformBase">
     <defName>CE_RestraintRack</defName>
     <label>restraint rack</label>
-    <description>todo</description>
+    <description>A large rack built for holding prisoners. Has mounted cuffs to prevent movement of the arms or legs.</description>
+    <researchPrerequisites>
+      <li>CE_RestraintRackResearch</li>
+    </researchPrerequisites>
     <graphicData>
       <texPath>Things/Building/DungeonProps/Misc/TortureRack</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
@@ -76,7 +82,7 @@
     </statBases>
     <comps>
       <li Class="CompProperties_EntityHolderPlatform">
-        <containmentFactor>0.5</containmentFactor>
+        <containmentFactor>0.85</containmentFactor>
       </li>
     </comps>
   </ThingDef>
@@ -84,10 +90,13 @@
   <ThingDef ParentName="CE_CapturePlatformBase">
     <defName>CE_RestraintPole</defName>
     <label>restraint pole</label>
-    <description>todo</description>
+    <description>A vertical pole built for restraining prisoners. Has mounted cuffs to prevent movement of the arms or legs.</description>
+    <researchPrerequisites>
+      <li>CE_RestraintPoleResearch</li>
+    </researchPrerequisites>
     <altitudeLayer>BuildingOnTop</altitudeLayer>
     <graphicData>
-      <texPath>Things/Building/DungeonProps/Misc/Pole/Pole_A</texPath>
+      <texPath>Things/Building/DungeonProps/Misc/Pole/Pole_B</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(2,3)</drawSize>
       <drawOffset>(0,0,0.1)</drawOffset>
@@ -106,7 +115,19 @@
     </statBases>
     <comps>
       <li Class="CompProperties_EntityHolderPlatform">
-        <containmentFactor>0.5</containmentFactor>
+        <containmentFactor>0.3</containmentFactor>
+      </li>
+      <li Class="VEF.Buildings.CompProperties_RandomBuildingGraphic">
+        <randomGraphics>
+          <li>Things/Building/DungeonProps/Misc/Pole/Pole_A</li>
+          <li>Things/Building/DungeonProps/Misc/Pole/Pole_B</li>
+          <li>Things/Building/DungeonProps/Misc/Pole/Pole_C</li>
+        </randomGraphics>
+        <optionalNames>
+          <li>Pole A</li>
+          <li>Pole B</li>
+          <li>Pole C</li>
+        </optionalNames>
       </li>
     </comps>
   </ThingDef>
@@ -115,6 +136,9 @@
     <defName>CE_Pillory</defName>
     <label>pillory</label>
     <description>todo</description>
+    <researchPrerequisites>
+      <li>CE_PilloryResearch</li>
+    </researchPrerequisites>
     <graphicData>
       <texPath>Things/Building/DungeonProps/Misc/Pillory</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
@@ -197,9 +221,14 @@
 
   <ThingDef ParentName="CE_CageBase">
     <defName>CE_CageSmall</defName>
-    <label>small cage</label>
+    <label>small prisoner cage</label>
     <description>todo</description>
+    <researchPrerequisites>
+      <li>CE_PrisonerCages</li>
+    </researchPrerequisites>
     <size>(2,2)</size>
+    <uiIconPath>UI/Architect/Cages/CE_CageSmall</uiIconPath>
+    <uiIconScale>1.25</uiIconScale>
     <graphicData>
       <texPath>Things/Building/DungeonProps/LargeCages/CageBase_Metal_2x2</texPath>
       <drawSize>(4,4)</drawSize>
@@ -214,13 +243,48 @@
         </topGraphicData>
       </li>
     </modExtensions>
+    <comps>
+      <li Class="CaptureExpansion.CompProperties_CageTopGraphicVariation">
+        <topGraphics>
+          <li>
+            <texPath>Things/Building/DungeonProps/LargeCages/CageTop_Flat_2x2</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(4,4)</drawSize>
+            <shaderType>Transparent</shaderType>
+          </li>
+          <li>
+            <texPath>Things/Building/DungeonProps/LargeCages/CageTop_Round_2x2</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(4,4)</drawSize>
+            <shaderType>Transparent</shaderType>
+          </li>
+          <li>
+            <texPath>Things/Building/DungeonProps/LargeCages/CageTop_Spike_2x2</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(4,4)</drawSize>
+            <shaderType>Transparent</shaderType>
+          </li>
+          <li>
+            <texPath>Things/Building/DungeonProps/LargeCages/CageTop_Shoddy_2x2</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(4,4)</drawSize>
+            <shaderType>Transparent</shaderType>
+          </li>
+        </topGraphics>
+      </li>
+    </comps>
   </ThingDef>
 
   <ThingDef ParentName="CE_CageBase">
     <defName>CE_CageMedium</defName>
-    <label>medium cage</label>
+    <label>medium prisoner cage</label>
     <description>todo</description>
+    <researchPrerequisites>
+      <li>CE_PrisonerCages</li>
+    </researchPrerequisites>
     <size>(3,2)</size>
+    <uiIconPath>UI/Architect/Cages/CE_CageMedium</uiIconPath>
+    <uiIconScale>1.25</uiIconScale>
     <graphicData>
       <texPath>Things/Building/DungeonProps/LargeCages/CageBase_Metal_3x2_north</texPath>
       <drawSize>(5,4)</drawSize>
@@ -235,13 +299,48 @@
         </topGraphicData>
       </li>
     </modExtensions>
+    <comps>
+      <li Class="CaptureExpansion.CompProperties_CageTopGraphicVariation">
+        <topGraphics>
+          <li>
+            <texPath>Things/Building/DungeonProps/LargeCages/CageTop_Flat_3x2_north</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(5,4)</drawSize>
+            <shaderType>Transparent</shaderType>
+          </li>
+          <li>
+            <texPath>Things/Building/DungeonProps/LargeCages/CageTop_Round_3x2_north</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(5,4)</drawSize>
+            <shaderType>Transparent</shaderType>
+          </li>
+          <li>
+            <texPath>Things/Building/DungeonProps/LargeCages/CageTop_Spike_3x2_north</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(5,4)</drawSize>
+            <shaderType>Transparent</shaderType>
+          </li>
+          <li>
+            <texPath>Things/Building/DungeonProps/LargeCages/CageTop_Shoddy_3x2_north</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(5,4)</drawSize>
+            <shaderType>Transparent</shaderType>
+          </li>
+        </topGraphics>
+      </li>
+    </comps>
   </ThingDef>
 
   <ThingDef ParentName="CE_CageBase">
     <defName>CE_CageLarge</defName>
-    <label>large cage</label>
+    <label>large prisoner cage</label>
     <description>todo</description>
+    <researchPrerequisites>
+      <li>CE_PrisonerCages</li>
+    </researchPrerequisites>
     <size>(3,3)</size>
+    <uiIconPath>UI/Architect/Cages/CE_CageLarge</uiIconPath>
+    <uiIconScale>1.25</uiIconScale>
     <graphicData>
       <texPath>Things/Building/DungeonProps/LargeCages/CageBase_Metal_3x3</texPath>
       <drawSize>(5,5)</drawSize>
@@ -256,5 +355,35 @@
         </topGraphicData>
       </li>
     </modExtensions>
+    <comps>
+      <li Class="CaptureExpansion.CompProperties_CageTopGraphicVariation">
+        <topGraphics>
+          <li>
+            <texPath>Things/Building/DungeonProps/LargeCages/CageTop_Flat_3x3</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(5,5)</drawSize>
+            <shaderType>Transparent</shaderType>
+          </li>
+          <li>
+            <texPath>Things/Building/DungeonProps/LargeCages/CageTop_Round_3x3</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(5,5)</drawSize>
+            <shaderType>Transparent</shaderType>
+          </li>
+          <li>
+            <texPath>Things/Building/DungeonProps/LargeCages/CageTop_Spike_3x3</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(5,5)</drawSize>
+            <shaderType>Transparent</shaderType>
+          </li>
+          <li>
+            <texPath>Things/Building/DungeonProps/LargeCages/CageTop_Shoddy_3x3</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(5,5)</drawSize>
+            <shaderType>Transparent</shaderType>
+          </li>
+        </topGraphics>
+      </li>
+    </comps>
   </ThingDef>
 </Defs>

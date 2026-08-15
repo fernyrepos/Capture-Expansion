@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>CE_PrisonerCages</defName>
+    <label>Prisoner cages</label>
+    <description>Build confined enclosures for holding captives.</description>
+    <baseCost>500</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>Main</tab>
+    <researchViewX>4.00</researchViewX>
+    <researchViewY>6.30</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>CE_RestraintChairResearch</defName>
+    <label>Restraint chair</label>
+    <description>Build a seated restraint with mounted cuffs.</description>
+    <baseCost>400</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>Main</tab>
+    <researchViewX>5.00</researchViewX>
+    <researchViewY>6.90</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>CE_RestraintRackResearch</defName>
+    <label>Restraint rack</label>
+    <description>Build a larger restraint with mounted cuffs for arms and legs.</description>
+    <baseCost>600</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>Main</tab>
+    <researchViewX>6.00</researchViewX>
+    <researchViewY>6.90</researchViewY>
+    <prerequisites>
+      <li>CE_RestraintChairResearch</li>
+    </prerequisites>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>CE_RestraintPoleResearch</defName>
+    <label>Restraint pole</label>
+    <description>Build a vertical standing restraint with mounted cuffs.</description>
+    <baseCost>300</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>Main</tab>
+    <researchViewX>5.00</researchViewX>
+    <researchViewY>6.30</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>CE_PilloryResearch</defName>
+    <label>Pillory</label>
+    <description>Build a wooden public restraint for captives.</description>
+    <baseCost>300</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>Main</tab>
+    <researchViewX>6.00</researchViewX>
+    <researchViewY>6.30</researchViewY>
+  </ResearchProjectDef>
+</Defs>

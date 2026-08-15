@@ -8,12 +8,19 @@ namespace CaptureExpansion
     public class Building_Cage : Building_Bed
     {
         private Graphic topGraphic;
+        private GraphicData cachedTopGraphicData;
 
         private Graphic TopGraphic
         {
             get
             {
-                topGraphic ??= def.GetModExtension<CageExtension>().topGraphicData.Graphic;
+                var topGraphicData = GetComp<CompCageTopGraphicVariation>()?.TopGraphicData
+                    ?? def.GetModExtension<CageExtension>().topGraphicData;
+                if (topGraphicData != cachedTopGraphicData)
+                {
+                    cachedTopGraphicData = topGraphicData;
+                    topGraphic = topGraphicData.Graphic;
+                }
                 return topGraphic;
             }
         }

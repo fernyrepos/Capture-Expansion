@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
+  <CE_ChangeCageTopGraphic>Change style</CE_ChangeCageTopGraphic>
+  <CE_ChangeCageTopGraphicDesc>Cycle this cage to the next top graphic variation.</CE_ChangeCageTopGraphicDesc>
   <CE_RestrainToBed>Restrain to bed</CE_RestrainToBed>
   <CE_RequiresWallsFirstAndThird>Requires walls on the adjacent left and right tiles.</CE_RequiresWallsFirstAndThird>
   <CE_StripHeldEntity>Stripping {0}</CE_StripHeldEntity>
