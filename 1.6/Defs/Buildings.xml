@@ -74,7 +74,7 @@
     <uiIconScale>0.75</uiIconScale>
     <size>(1,2)</size>
     <costList>
-      <WoodLog>60</WoodLog>
+      <WoodLog>85</WoodLog>
     </costList>
     <statBases>
       <WorkToBuild>1200</WorkToBuild>
@@ -105,6 +105,7 @@
     <size>(1,1)</size>
     <rotatable>false</rotatable>
     <stuffCategories>
+      <li>Woody</li>
       <li>Metallic</li>
       <li>Stony</li>
     </stuffCategories>
@@ -135,7 +136,7 @@
   <ThingDef ParentName="CE_CapturePlatformBase">
     <defName>CE_Pillory</defName>
     <label>pillory</label>
-    <description>todo</description>
+    <description>A wooden restraint that holds a prisoner upright by the neck and wrists.</description>
     <researchPrerequisites>
       <li>CE_PilloryResearch</li>
     </researchPrerequisites>
@@ -208,6 +209,9 @@
       <Comfort>0.3</Comfort>
       <BedRestEffectiveness>0.6</BedRestEffectiveness>
     </statBases>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
     <building>
       <bed_showSleeperBody>True</bed_showSleeperBody>
       <bed_humanlike>True</bed_humanlike>
@@ -222,11 +226,12 @@
   <ThingDef ParentName="CE_CageBase">
     <defName>CE_CageSmall</defName>
     <label>small prisoner cage</label>
-    <description>todo</description>
+    <description>A compact barred enclosure for confining a single prisoner.</description>
     <researchPrerequisites>
       <li>CE_PrisonerCages</li>
     </researchPrerequisites>
     <size>(2,2)</size>
+    <costStuffCount>100</costStuffCount>
     <uiIconPath>UI/Architect/Cages/CE_CageSmall</uiIconPath>
     <uiIconScale>1.25</uiIconScale>
     <graphicData>
@@ -278,10 +283,11 @@
   <ThingDef ParentName="CE_CageBase">
     <defName>CE_CageMedium</defName>
     <label>medium prisoner cage</label>
-    <description>todo</description>
+    <description>A barred enclosure with enough room for two prisoners.</description>
     <researchPrerequisites>
       <li>CE_PrisonerCages</li>
     </researchPrerequisites>
+    <costStuffCount>150</costStuffCount>
     <size>(3,2)</size>
     <uiIconPath>UI/Architect/Cages/CE_CageMedium</uiIconPath>
     <uiIconScale>1.25</uiIconScale>
@@ -334,7 +340,8 @@
   <ThingDef ParentName="CE_CageBase">
     <defName>CE_CageLarge</defName>
     <label>large prisoner cage</label>
-    <description>todo</description>
+    <costStuffCount>200</costStuffCount>
+    <description>A spacious barred enclosure for holding up to four prisoners.</description>
     <researchPrerequisites>
       <li>CE_PrisonerCages</li>
     </researchPrerequisites>
