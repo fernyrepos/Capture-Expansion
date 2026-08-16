@@ -9,7 +9,7 @@ namespace CaptureExpansion
     {
         public static void Postfix(CompHoldingPlatformTarget __instance, ref bool __result)
         {
-            if (__result is false && __instance.parent is Pawn pawn && pawn.RaceProps.Humanlike && pawn.IsMutant is false && (pawn.Downed || pawn.ParentHolder is Pawn_CarryTracker))
+            if (__result is false && State.humanRaces.Contains(__instance.parent.def) && __instance.parent is Pawn pawn && pawn.IsMutant is false && (pawn.Downed || pawn.ParentHolder is Pawn_CarryTracker))
             {
                 __result = true;
             }

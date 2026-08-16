@@ -1,10 +1,22 @@
+using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using Verse;
 
 namespace CaptureExpansion
 {
+    [StaticConstructorOnStartup]
     public static class State
     {
+        public static HashSet<ThingDef> humanRaces = new HashSet<ThingDef>();
+
+        static State()
+        {
+            foreach (var def in DefDatabase<ThingDef>.AllDefs.Where(x => x.race != null && x.race.Humanlike && x.IsCorpse is false))
+            {
+                humanRaces.Add(def);
+            }
+        }
         private static readonly ConditionalWeakTable<Pawn, CaptureData> pawnData = new();
 
         public static CaptureData GetData(this Pawn pawn)
