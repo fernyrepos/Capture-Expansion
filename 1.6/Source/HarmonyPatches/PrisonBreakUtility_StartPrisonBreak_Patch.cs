@@ -25,10 +25,7 @@ namespace CaptureExpansion
     {
         public static void Postfix(Pawn initiator)
         {
-            if (initiator.RaceProps.Humanlike)
-            {
-                initiator.GetData().restrainedToBed = false;
-            }
+            initiator.guest?.ToggleNonExclusiveInteraction(DefsOf.CE_RestrainToBed, false);
         }
     }
 }

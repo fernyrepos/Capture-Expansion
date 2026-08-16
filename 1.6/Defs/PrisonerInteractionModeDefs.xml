@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <PrisonerInteractionModeDef>
+    <defName>CE_RestrainToBed</defName>
+    <label>restrain to bed</label>
+    <listOrder>27</listOrder>
+    <description>Restrain this prisoner to make them impossible to escape.</description>
+    <mustBeAwake>false</mustBeAwake>
+    <isNonExclusiveInteraction>true</isNonExclusiveInteraction>
+  </PrisonerInteractionModeDef>
+</Defs>

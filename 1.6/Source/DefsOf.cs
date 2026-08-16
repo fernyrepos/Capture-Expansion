@@ -7,5 +7,7 @@ namespace CaptureExpansion
     public static class DefsOf
     {
         public static JobDef CE_StripHeldEntity;
+
+        public static PrisonerInteractionModeDef CE_RestrainToBed;
     }
 }
