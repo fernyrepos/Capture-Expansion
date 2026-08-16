@@ -1,4 +1,3 @@
-using System.Linq;
 using HarmonyLib;
 using RimWorld;
 using Verse;
@@ -15,7 +14,7 @@ namespace CaptureExpansion
             {
                 __result = true;
             }
-            else if (State.IsCaged(pawn) && pawn.ownership.OwnedBed is Building_Cage cage && cage.WanderCells().Contains(t.Position) is false)
+            else if (State.IsCaged(pawn) && pawn.ownership.OwnedBed is Building_Cage cage && cage.WanderCells.Contains(t.Position) is false)
             {
                 __result = true;
             }

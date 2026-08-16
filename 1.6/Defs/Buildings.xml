@@ -23,9 +23,6 @@
         <linkableFacilities />
       </li>
     </comps>
-    <modExtensions>
-      <li Class="CaptureExpansion.RestraintExtension" />
-    </modExtensions>
   </ThingDef>
 
   <ThingDef ParentName="CE_CapturePlatformBase">
@@ -57,6 +54,16 @@
         <containmentFactor>0.4</containmentFactor>
       </li>
     </comps>
+    <modExtensions>
+      <li Class="CaptureExpansion.RestraintExtension">
+        <heldPawnPosture>Standing</heldPawnPosture>
+        <faceRotation>false</faceRotation>
+        <pawnDrawOffsetNorth>(0, 0.01, 0.15)</pawnDrawOffsetNorth>
+        <pawnDrawOffsetEast>(0, 0.01, 0.25)</pawnDrawOffsetEast>
+        <pawnDrawOffsetSouth>(0, -1, 0.15)</pawnDrawOffsetSouth>
+        <pawnDrawOffsetWest>(0, 0.01, 0.25)</pawnDrawOffsetWest>
+      </li>
+    </modExtensions>
   </ThingDef>
 
   <ThingDef ParentName="CE_CapturePlatformBase">
@@ -85,6 +92,16 @@
         <containmentFactor>0.85</containmentFactor>
       </li>
     </comps>
+    <modExtensions>
+      <li Class="CaptureExpansion.RestraintExtension">
+        <pawnDrawOffsetNorth>(0, 0.01, 0.25)</pawnDrawOffsetNorth>
+        <pawnDrawOffsetEast>(0, 0.01, 0.25)</pawnDrawOffsetEast>
+        <pawnDrawOffsetSouth>(0, 0.01, 0.25)</pawnDrawOffsetSouth>
+        <pawnDrawOffsetWest>(0, 0.01, 0.25)</pawnDrawOffsetWest>
+        <angleOffsetEast>14</angleOffsetEast>
+        <angleOffsetWest>-14</angleOffsetWest>
+      </li>
+    </modExtensions>
   </ThingDef>
 
   <ThingDef ParentName="CE_CapturePlatformBase">
@@ -131,6 +148,13 @@
         </optionalNames>
       </li>
     </comps>
+    <modExtensions>
+      <li Class="CaptureExpansion.RestraintExtension">
+        <heldPawnPosture>Standing</heldPawnPosture>
+        <faceRotation>false</faceRotation>
+        <pawnDrawOffsetNorth>(0, 0.01, 0.1)</pawnDrawOffsetNorth>
+      </li>
+    </modExtensions>
   </ThingDef>
 
   <ThingDef ParentName="CE_CapturePlatformBase">
@@ -159,6 +183,25 @@
         <containmentFactor>0.5</containmentFactor>
       </li>
     </comps>
+    <modExtensions>
+      <li Class="CaptureExpansion.RestraintExtension">
+        <heldPawnPosture>LayingOnGroundNormal</heldPawnPosture>
+        <faceRotation>false</faceRotation>
+        <usePlatformAngle>false</usePlatformAngle>
+        <crawlingHeadNorth>true</crawlingHeadNorth>
+        <fixedRotation>North</fixedRotation>
+        <angleOffsetEast>-35</angleOffsetEast>
+        <angleOffsetWest>35</angleOffsetWest>
+        <pawnDrawOffsetEast>(-0.2, -0.01, 0.05)</pawnDrawOffsetEast>
+        <pawnDrawOffsetWest>(0.2, -0.01, 0.05)</pawnDrawOffsetWest>
+        <bodyDrawOffsetNorth>(0, -1, -0.15)</bodyDrawOffsetNorth>
+        <bodyDrawOffsetSouth>(0, -1, 0.15)</bodyDrawOffsetSouth>
+        <headDrawOffsetNorth>(0, 0.05, -0.15)</headDrawOffsetNorth>
+        <headDrawOffsetEast>(0, 0.05, 0)</headDrawOffsetEast>
+        <headDrawOffsetSouth>(0, 0.05, 0.15)</headDrawOffsetSouth>
+        <headDrawOffsetWest>(0, 0.05, 0)</headDrawOffsetWest>
+      </li>
+    </modExtensions>
   </ThingDef>
 
   <ThingDef ParentName="BedBase">

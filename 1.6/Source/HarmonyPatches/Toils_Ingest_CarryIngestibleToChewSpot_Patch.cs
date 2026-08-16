@@ -1,4 +1,3 @@
-using System.Linq;
 using HarmonyLib;
 using RimWorld;
 using Verse;
@@ -16,7 +15,7 @@ namespace CaptureExpansion
                 var toil = ToilMaker.MakeToil("CarryIngestibleToChewSpot_Cage");
                 toil.initAction = () =>
                 {
-                    var cells = cage.WanderCells().ToList();
+                    var cells = cage.WanderCells;
                     var cell = cells.Contains(toil.actor.Position) ? toil.actor.Position : cells.TryRandomElement(out var c) ? c : toil.actor.Position;
                     toil.actor.pather.StartPath(cell, PathEndMode.OnCell);
                 };

@@ -10,8 +10,7 @@ namespace CaptureExpansion
         public override Job TryGiveJob(Pawn pawn)
         {
             if (pawn.ownership?.OwnedBed is not Building_Cage cage) return null;
-            var cells = cage.WanderCells().ToList();
-            pawn.jobs.debugLog = true;
+            var cells = cage.WanderCells;
             if (cells.Contains(pawn.Position) is false)
             {
                 var moveJob = JobMaker.MakeJob(JobDefOf.GotoWander, cells.RandomElement());

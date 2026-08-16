@@ -8,7 +8,7 @@ namespace CaptureExpansion
     {
         public override Job TryGiveJob(Pawn pawn)
         {
-            var bed = pawn.ownership?.OwnedBed;
+            var bed = pawn.ownership?.OwnedBed ?? RestUtility.FindBedFor(pawn);
             if (bed != null && pawn.InBed() is false)
             {
                 return JobMaker.MakeJob(JobDefOf.LayDown, bed);

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using RimWorld;
+using UnityEngine;
 using Verse;
 
 namespace CaptureExpansion
@@ -8,7 +9,66 @@ namespace CaptureExpansion
     {
         public GraphicData topGraphicData;
     }
-    public class RestraintExtension : DefModExtension { }
+    public class RestraintExtension : DefModExtension
+    {
+        public PawnPosture heldPawnPosture = PawnPosture.LayingOnGroundFaceUp;
+        public bool faceRotation;
+        public bool usePlatformAngle = true;
+        public bool crawlingHeadNorth;
+        public Vector3? pawnDrawOffsetNorth;
+        public Vector3? pawnDrawOffsetEast;
+        public Vector3? pawnDrawOffsetSouth;
+        public Vector3? pawnDrawOffsetWest;
+        public Vector3? headDrawOffsetNorth;
+        public Vector3? headDrawOffsetEast;
+        public Vector3? headDrawOffsetSouth;
+        public Vector3? headDrawOffsetWest;
+        public Vector3? bodyDrawOffsetNorth;
+        public Vector3? bodyDrawOffsetEast;
+        public Vector3? bodyDrawOffsetSouth;
+        public Vector3? bodyDrawOffsetWest;
+        public float? angleOffsetNorth;
+        public float? angleOffsetEast;
+        public float? angleOffsetSouth;
+        public float? angleOffsetWest;
+        public Rot4? fixedRotation;
+
+        public Vector3 PawnDrawOffsetFor(Rot4 rot)
+        {
+            if (rot == Rot4.North && pawnDrawOffsetNorth.HasValue) return pawnDrawOffsetNorth.Value;
+            if (rot == Rot4.East && pawnDrawOffsetEast.HasValue) return pawnDrawOffsetEast.Value;
+            if (rot == Rot4.South && pawnDrawOffsetSouth.HasValue) return pawnDrawOffsetSouth.Value;
+            if (rot == Rot4.West && pawnDrawOffsetWest.HasValue) return pawnDrawOffsetWest.Value;
+            return Vector3.zero;
+        }
+
+        public float AngleOffsetFor(Rot4 rot)
+        {
+            if (rot == Rot4.North && angleOffsetNorth.HasValue) return angleOffsetNorth.Value;
+            if (rot == Rot4.East && angleOffsetEast.HasValue) return angleOffsetEast.Value;
+            if (rot == Rot4.South && angleOffsetSouth.HasValue) return angleOffsetSouth.Value;
+            if (rot == Rot4.West && angleOffsetWest.HasValue) return angleOffsetWest.Value;
+            return 0f;
+        }
+
+        public Vector3 HeadDrawOffsetFor(Rot4 rot)
+        {
+            if (rot == Rot4.North && headDrawOffsetNorth.HasValue) return headDrawOffsetNorth.Value;
+            if (rot == Rot4.East && headDrawOffsetEast.HasValue) return headDrawOffsetEast.Value;
+            if (rot == Rot4.South && headDrawOffsetSouth.HasValue) return headDrawOffsetSouth.Value;
+            if (rot == Rot4.West && headDrawOffsetWest.HasValue) return headDrawOffsetWest.Value;
+            return Vector3.zero;
+        }
+
+        public Vector3 BodyDrawOffsetFor(Rot4 rot)
+        {
+            if (rot == Rot4.North && bodyDrawOffsetNorth.HasValue) return bodyDrawOffsetNorth.Value;
+            if (rot == Rot4.East && bodyDrawOffsetEast.HasValue) return bodyDrawOffsetEast.Value;
+            if (rot == Rot4.South && bodyDrawOffsetSouth.HasValue) return bodyDrawOffsetSouth.Value;
+            if (rot == Rot4.West && bodyDrawOffsetWest.HasValue) return bodyDrawOffsetWest.Value;
+            return Vector3.zero;
+        }
+    }
 
     public class CompProperties_CageTopGraphicVariation : CompProperties
     {
