@@ -211,27 +211,51 @@
     <graphicData>
       <texPath>Things/Building/DungeonProps/Misc/RusticPrisonBed</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(3,2)</drawSize>
+      <drawSize>(2,3)</drawSize>
+      <shaderType>CutoutComplex</shaderType>
     </graphicData>
-    <size>(1,1)</size>
-    <statBases>
-      <WorkToBuild>800</WorkToBuild>
-      <Mass>20</Mass>
-      <Comfort>0.4</Comfort>
-      <BedRestEffectiveness>0.4</BedRestEffectiveness>
-    </statBases>
+    <size>(1,2)</size>
+    <drawGUIOverlay>True</drawGUIOverlay>
+    <designationCategory>Furniture</designationCategory>
     <building>
       <bed_showSleeperBody>True</bed_showSleeperBody>
-      <bed_humanlike>True</bed_humanlike>
+      <bed_healPerDay>4</bed_healPerDay>
+      <buildingTags>
+        <li>Bed</li>
+      </buildingTags>
     </building>
-    <comps>
-      <li Class="CompProperties_AffectedByFacilities">
-        <linkableFacilities />
-      </li>
-    </comps>
     <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
       <li>CaptureExpansion.PlaceWorker_WallCot</li>
     </placeWorkers>
+    <statBases>
+      <WorkToBuild>800</WorkToBuild>
+      <Mass>30</Mass>
+      <Comfort>0.4</Comfort>
+      <BedRestEffectiveness>0.4</BedRestEffectiveness>
+      <ImmunityGainSpeedFactor>1.05</ImmunityGainSpeedFactor>
+      <TerrorSource MayRequire="Ludeon.RimWorld.Ideology">5</TerrorSource>
+      <Beauty>-5</Beauty>
+    </statBases>
+    <stuffCategories>
+      <li>Woody</li>
+    </stuffCategories>
+    <costStuffCount>15</costStuffCount>
+    <comps>
+      <li Class="CompProperties_AssignableToPawn">
+        <drawAssignmentOverlay>false</drawAssignmentOverlay>
+        <compClass>CompAssignableToPawn_Bed</compClass>
+      </li>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>EndTable</li>
+          <li>Dresser</li>
+        </linkableFacilities>
+      </li>
+    </comps>
+    <replaceTags>
+      <li>Bed</li>
+    </replaceTags>
   </ThingDef>
 
   <ThingDef ParentName="BedBase" Name="CE_CageBase" Abstract="True">
