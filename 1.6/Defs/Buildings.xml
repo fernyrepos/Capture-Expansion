@@ -29,6 +29,7 @@
     <defName>CE_RestraintChair</defName>
     <label>restraint chair</label>
     <description>A chair built for restraining prisoners. Has mounted cuffs to prevent movement of the arms.</description>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
     <researchPrerequisites>
       <li>CE_RestraintChairResearch</li>
     </researchPrerequisites>
