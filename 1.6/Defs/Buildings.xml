@@ -172,6 +172,7 @@
     </graphicData>
     <uiIconScale>0.75</uiIconScale>
     <size>(1,1)</size>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
     <costList>
       <WoodLog>50</WoodLog>
     </costList>
