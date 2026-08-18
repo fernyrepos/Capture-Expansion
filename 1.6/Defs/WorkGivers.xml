@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <WorkGiverDef>
+    <defName>CE_DoBillHeldPrisoner</defName>
+    <label>operate on held prisoners</label>
+    <giverClass>CaptureExpansion.WorkGiver_DoBillHeldPrisoner</giverClass>
+    <workType>Doctor</workType>
+    <priorityInType>100</priorityInType>
+    <billGiversAllHumanlikes>true</billGiversAllHumanlikes>
+    <verb>operate on</verb>
+    <gerund>operating on</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+</Defs>

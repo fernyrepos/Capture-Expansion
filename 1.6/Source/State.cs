@@ -19,6 +19,7 @@ namespace CaptureExpansion
 
         public static bool IsRestrained(this Pawn pawn)
         {
+            if (pawn.IsCaged()) return false;
             if (pawn.guest != null && pawn.guest.IsInteractionEnabled(DefsOf.CE_RestrainToBed)) return true;
             if (pawn.ownership?.OwnedBed != null && pawn.ownership.OwnedBed.def.HasModExtension<RestraintExtension>()) return true;
             if (pawn.IsOnHoldingPlatform) return true;
@@ -27,7 +28,9 @@ namespace CaptureExpansion
 
         public static bool IsCaged(this Pawn pawn)
         {
-            return pawn.ownership?.OwnedBed != null && pawn.ownership.OwnedBed.def.HasModExtension<CageExtension>();
+            if (pawn.ownership?.OwnedBed is Building_Cage) return true;
+            if (pawn.Spawned && pawn.Map.thingGrid.ThingsListAtFast(pawn.Position).Any(t => t is Building_Cage)) return true;
+            return false;
         }
     }
 }

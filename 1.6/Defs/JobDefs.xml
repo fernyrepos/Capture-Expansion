@@ -5,4 +5,10 @@
     <driverClass>CaptureExpansion.JobDriver_StripHeldEntity</driverClass>
     <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
   </JobDef>
+  <JobDef>
+    <defName>CE_TakeHeldPrisonerToBed</defName>
+    <driverClass>CaptureExpansion.JobDriver_TakeHeldPrisonerToBed</driverClass>
+    <reportString>taking TargetC to TargetB.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
 </Defs>

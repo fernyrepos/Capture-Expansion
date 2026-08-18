@@ -22,6 +22,28 @@ namespace CaptureExpansion
                     StrippableUtility.CheckSendStrippingImpactsGoodwillMessage(held);
                 }), selPawn, __instance);
             }
+            if (held == null || held.RaceProps.Humanlike is false || held.IsMutant || held.IsPrisonerOfColony is false)
+            {
+                yield break;
+            }
+            if (ModsConfig.BiotechActive && held.guest.IsInteractionEnabled(PrisonerInteractionModeDefOf.Bloodfeed) is false)
+            {
+                yield break;
+            }
+            if (selPawn.IsBloodfeeder() is false || selPawn.genes.GetFirstGeneOfType<Gene_Hemogen>() == null || held.InAggroMentalState || held.WouldDieFromAdditionalBloodLoss(0.4499f))
+            {
+                yield break;
+            }
+            if (selPawn.CanReach(__instance, PathEndMode.ClosestTouch, Danger.Deadly) is false)
+            {
+                yield return new FloatMenuOption("CannotBloodfeedOn".Translate(held.Named("PAWN")) + ": " + "NoPath".Translate().CapitalizeFirst(), null);
+                yield break;
+            }
+            yield return FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption("BloodfeedOn".Translate(held.Named("PAWN")), () =>
+            {
+                __instance.SetForbidden(false, warnOnFail: false);
+                selPawn.jobs.TryTakeOrderedJob(JobMaker.MakeJob(JobDefOf.PrisonerBloodfeed, held), JobTag.Misc);
+            }), selPawn, __instance);
         }
     }
 }

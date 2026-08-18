@@ -18,7 +18,11 @@ namespace CaptureExpansion
                 {
                     if (carrier != null)
                     {
-                        var job = JobMaker.MakeJob(pawn.Downed ? JobDefOf.Capture : JobDefOf.Arrest, pawn, bed);
+                        var fromPlatform = transferBetweenPlatforms || pawn.ParentHolder is Building_HoldingPlatform;
+                        var src = sourcePlatform ?? pawn.ParentHolder as Thing;
+                        var job = fromPlatform && src != null
+                            ? JobMaker.MakeJob(DefsOf.CE_TakeHeldPrisonerToBed, src, bed, pawn)
+                            : JobMaker.MakeJob(pawn.Downed ? JobDefOf.Capture : JobDefOf.Arrest, pawn, bed);
                         job.count = 1;
                         carrier.jobs.TryTakeOrderedJob(job, JobTag.Misc);
                     }

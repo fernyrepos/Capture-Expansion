@@ -8,6 +8,8 @@ namespace CaptureExpansion
     {
         public static JobDef CE_StripHeldEntity;
 
+        public static JobDef CE_TakeHeldPrisonerToBed;
+
         public static PrisonerInteractionModeDef CE_RestrainToBed;
     }
 }
