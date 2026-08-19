@@ -5,4 +5,8 @@
   <CE_RestrainToBed>Restrain to bed</CE_RestrainToBed>
   <CE_RequiresWalls>Requires walls on the adjacent left and right tiles.</CE_RequiresWalls>
   <CE_StripHeldEntity>Stripping {0}</CE_StripHeldEntity>
+
+  <LetterLabelEscapingFromHoldingPlatform>Captive escape</LetterLabelEscapingFromHoldingPlatform> 
+  <LetterEscapingFromHoldingPlatform>The following captives have escaped their restraints:\n\n{0}\n\nBuild stronger containment rooms to stop captives from escaping. Captives are less likely to escape from restraints with high containment strength, which comes from strong walls and doors, good lighting, and special containment devices.</LetterEscapingFromHoldingPlatform> 
+
 </LanguageData>
