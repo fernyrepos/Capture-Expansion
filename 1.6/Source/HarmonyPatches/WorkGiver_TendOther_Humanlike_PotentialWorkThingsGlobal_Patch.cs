@@ -9,22 +9,26 @@ namespace CaptureExpansion
     [HarmonyPatch(typeof(WorkGiver_Tend), nameof(WorkGiver_Tend.PotentialWorkThingsGlobal))]
     public static class WorkGiver_TendOther_Humanlike_PotentialWorkThingsGlobal_Patch
     {
-        public static void Postfix(Pawn pawn, WorkGiver_Tend __instance, ref IEnumerable<Thing> __result)
+        public static IEnumerable<Thing> Postfix(IEnumerable<Thing> __result, Pawn pawn, WorkGiver_Tend __instance)
         {
-            if (__instance is not WorkGiver_TendOther_Humanlike)
+            if (__result != null)
             {
-                return;
-            }
-            var list = __result.ToList();
-            foreach (var platform in pawn.Map.listerThings.AllThings.OfType<Building_HoldingPlatform>())
-            {
-                var held = platform.HeldPawn;
-                if (held != null && held.RaceProps.Humanlike && held.IsMutant is false && HealthAIUtility.ShouldBeTendedNowByPlayer(held))
+                foreach (var thing in __result)
                 {
-                    list.Add(held);
+                    yield return thing;
                 }
             }
-            __result = list;
+            if (__instance is not WorkGiver_TendOther_Humanlike)
+            {
+                yield break;
+            }
+            foreach (var platform in pawn.Map.listerThings.ThingsInGroup(ThingRequestGroup.EntityHolder).OfType<Building_HoldingPlatform>())
+            {
+                if (platform.HeldPawn is { RaceProps.Humanlike: true, IsMutant: false } held && HealthAIUtility.ShouldBeTendedNowByPlayer(held))
+                {
+                    yield return held;
+                }
+            }
         }
     }
 }

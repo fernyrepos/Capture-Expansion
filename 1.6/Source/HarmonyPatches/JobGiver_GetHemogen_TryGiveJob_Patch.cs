@@ -20,7 +20,7 @@ namespace CaptureExpansion
             {
                 return;
             }
-            foreach (var platform in pawn.Map.listerThings.AllThings.OfType<Building_HoldingPlatform>())
+            foreach (var platform in pawn.Map.listerThings.ThingsInGroup(ThingRequestGroup.EntityHolder).OfType<Building_HoldingPlatform>())
             {
                 var held = platform.HeldPawn;
                 if (held == null || held.RaceProps.Humanlike is false || held.IsMutant || held.WouldDieFromAdditionalBloodLoss(0.4499f))

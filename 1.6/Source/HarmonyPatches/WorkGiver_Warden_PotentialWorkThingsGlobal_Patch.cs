@@ -9,18 +9,22 @@ namespace CaptureExpansion
     [HarmonyPatch(typeof(WorkGiver_Warden), nameof(WorkGiver_Warden.PotentialWorkThingsGlobal))]
     public static class WorkGiver_Warden_PotentialWorkThingsGlobal_Patch
     {
-        public static void Postfix(Pawn pawn, ref IEnumerable<Thing> __result)
+        public static IEnumerable<Thing> Postfix(IEnumerable<Thing> __result, Pawn pawn)
         {
-            var list = __result.ToList();
-            foreach (var platform in pawn.Map.listerThings.AllThings.OfType<Building_HoldingPlatform>())
+            if (__result != null)
             {
-                var held = platform.HeldPawn;
-                if (held != null && held.RaceProps.Humanlike && held.IsMutant is false && held.IsPrisonerOfColony)
+                foreach (var thing in __result)
                 {
-                    list.Add(held);
+                    yield return thing;
                 }
             }
-            __result = list;
+            foreach (var platform in pawn.Map.listerThings.ThingsInGroup(ThingRequestGroup.EntityHolder).OfType<Building_HoldingPlatform>())
+            {
+                if (platform.HeldPawn is { RaceProps.Humanlike: true, IsMutant: false, IsPrisonerOfColony: true } held)
+                {
+                    yield return held;
+                }
+            }
         }
     }
 }
