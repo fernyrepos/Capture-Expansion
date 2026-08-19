@@ -7,15 +7,12 @@ namespace CaptureExpansion
     [HarmonyPatch(typeof(WorkGiver_TakeEntityToHoldingPlatform), nameof(WorkGiver_TakeEntityToHoldingPlatform.HasJobOnThing))]
     public static class WorkGiver_TakeEntityToHoldingPlatform_HasJobOnThing_Patch
     {
-        public static bool Prefix(Thing t, ref bool __result)
+        public static void Postfix(Thing t, ref bool __result)
         {
-            var comp = t.TryGetComp<CompHoldingPlatformTarget>();
-            if (comp?.targetHolder != null && comp.targetHolder is not Building_HoldingPlatform)
+            if (__result && t is Pawn { IsPrisonerOfColony: true })
             {
                 __result = false;
-                return false;
             }
-            return true;
         }
     }
 }
