@@ -18,13 +18,24 @@ namespace CaptureExpansion
                 {
                     if (carrier != null)
                     {
-                        var fromPlatform = transferBetweenPlatforms || pawn.ParentHolder is Building_HoldingPlatform;
+                        var isCurrentlyOnPlatform = pawn.ParentHolder is Building_HoldingPlatform;
                         var src = sourcePlatform ?? pawn.ParentHolder as Thing;
-                        var job = fromPlatform && src != null
+                        var job = isCurrentlyOnPlatform && src != null
                             ? JobMaker.MakeJob(DefsOf.CE_TakeHeldPrisonerToBed, src, bed, pawn)
-                            : JobMaker.MakeJob(pawn.Downed ? JobDefOf.Capture : JobDefOf.Arrest, pawn, bed);
+                            : JobMaker.MakeJob(pawn.Downed ? JobDefOf.TakeWoundedPrisonerToBed : JobDefOf.EscortPrisonerToBed, pawn, bed);
                         job.count = 1;
                         carrier.jobs.TryTakeOrderedJob(job, JobTag.Misc);
+                    }
+                    else
+                    {
+                        if (pawn.ParentHolder is Building_HoldingPlatform)
+                        {
+                            pawn.TryGetComp<CompHoldingPlatformTarget>().targetHolder = bed;
+                        }
+                        else
+                        {
+                            pawn.ownership.ClaimBedIfNonMedical(bed);
+                        }
                     }
                 }
                 else if (target.Thing is Building_HoldingPlatform platform)
@@ -32,8 +43,10 @@ namespace CaptureExpansion
                     pawn.TryGetComp<CompHoldingPlatformTarget>().targetHolder = platform;
                     if (carrier != null)
                     {
-                        var job = transferBetweenPlatforms
-                            ? JobMaker.MakeJob(JobDefOf.TransferBetweenEntityHolders, sourcePlatform, platform, pawn)
+                        var isCurrentlyOnPlatform = pawn.ParentHolder is Building_HoldingPlatform;
+                        var src = sourcePlatform ?? pawn.ParentHolder as Thing;
+                        var job = isCurrentlyOnPlatform && src != null
+                            ? JobMaker.MakeJob(JobDefOf.TransferBetweenEntityHolders, src, platform, pawn)
                             : JobMaker.MakeJob(JobDefOf.CarryToEntityHolder, platform, pawn);
                         job.count = 1;
                         carrier.jobs.TryTakeOrderedJob(job, JobTag.Misc);
@@ -57,7 +70,7 @@ namespace CaptureExpansion
             if (target.Thing is Building_HoldingPlatform platform)
                 return platform.TryGetComp<CompEntityHolder>() is { Available: true } && (carrier == null || carrier.CanReserveAndReach(platform, PathEndMode.Touch, Danger.Some));
             if (target.Thing is Building_Bed bed)
-                return bed.IsBurning() is false && (bed is Building_Cage || bed.ForPrisoners) && RestUtility.CanUseBedEver(victim, bed.def) && (bed.AnyUnownedSleepingSlot || bed.AnyUnoccupiedSleepingSlot) && (carrier == null || carrier.CanReserveAndReach(bed, PathEndMode.Touch, Danger.Some));
+                return bed.IsBurning() is false && (bed is Building_Cage || bed.ForPrisoners) && RestUtility.CanUseBedEver(victim, bed.def) && (bed.AnyUnownedSleepingSlot || bed.IsOwner(victim)) && (carrier == null || carrier.CanReserveAndReach(bed, PathEndMode.Touch, Danger.Some));
             return false;
         }
     }
