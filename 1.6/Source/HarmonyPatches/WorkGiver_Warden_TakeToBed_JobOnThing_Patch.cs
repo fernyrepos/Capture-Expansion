@@ -55,22 +55,17 @@ namespace CaptureExpansion
                         return false;
                     }
                 }
-                else if (targetHolder is Building_HoldingPlatform destPlatform && targetHolder != currentPlatform)
+                else if (targetHolder is Building_HoldingPlatform destPlatform && destPlatform != currentPlatform)
                 {
-                    if (pawn.CanReserveAndReach(prisoner, PathEndMode.OnCell, Danger.Deadly, 1, -1, null, forced) && pawn.CanReserveAndReach(destPlatform, PathEndMode.Touch, Danger.Deadly, 1, -1, null, forced))
+                    if (isCurrentlyOnPlatform && pawn.CanReserveAndReach(prisoner, PathEndMode.OnCell, Danger.Deadly, 1, -1, null, forced) && pawn.CanReserveAndReach(destPlatform, PathEndMode.Touch, Danger.Deadly, 1, -1, null, forced))
                     {
-                        var job = isCurrentlyOnPlatform
-                            ? JobMaker.MakeJob(JobDefOf.TransferBetweenEntityHolders, currentPlatform, destPlatform, prisoner)
-                            : JobMaker.MakeJob(JobDefOf.CarryToEntityHolder, destPlatform, prisoner);
+                        var job = JobMaker.MakeJob(JobDefOf.TransferBetweenEntityHolders, currentPlatform, destPlatform, prisoner);
                         job.count = 1;
                         __result = job;
                         return false;
                     }
-                    else
-                    {
-                        __result = null;
-                        return false;
-                    }
+                    __result = null;
+                    return false;
                 }
 
                 if (isCurrentlyOnPlatform)

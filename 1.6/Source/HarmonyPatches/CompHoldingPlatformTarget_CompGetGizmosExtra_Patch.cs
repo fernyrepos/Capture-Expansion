@@ -11,9 +11,18 @@ namespace CaptureExpansion
     {
         public static IEnumerable<Gizmo> Postfix(IEnumerable<Gizmo> values, CompHoldingPlatformTarget __instance)
         {
-            foreach (var v in values) yield return v;
+            var pawn = __instance.parent as Pawn;
+            var isHumanPrisoner = pawn != null && pawn.RaceProps.Humanlike && pawn.IsMutant is false && pawn.IsPrisonerOfColony;
+            foreach (var v in values)
+            {
+                if (isHumanPrisoner && __instance.CurrentlyHeldOnPlatform is false)
+                {
+                    continue;
+                }
+                yield return v;
+            }
 
-            if (__instance.parent is Pawn pawn && pawn.IsPrisonerOfColony && __instance.CurrentlyHeldOnPlatform is false)
+            if (isHumanPrisoner && __instance.CurrentlyHeldOnPlatform is false)
             {
                 if (__instance.targetHolder != null)
                 {
