@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThoughtDef>
+    <defName>CE_BrutallyRestrained</defName>
+    <workerClass>CaptureExpansion.ThoughtWorker_BrutallyRestrained</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>brutally restrained</label>
+        <description>I am locked down and bound with no freedom of movement. It's humiliating and agonizing.</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

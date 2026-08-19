@@ -8,7 +8,7 @@ namespace CaptureExpansion
     [HarmonyPatch(typeof(StudyUtility), nameof(StudyUtility.TargetHoldingPlatformForEntity))]
     public static class StudyUtility_TargetHoldingPlatformForEntity_Patch
     {
-        public static bool Prefix(Pawn carrier, Thing entity, bool transferBetweenPlatforms, Thing sourcePlatform)
+        public static bool Prefix(Pawn carrier, Thing entity, Thing sourcePlatform)
         {
             if (entity is not Pawn pawn || pawn.RaceProps.Humanlike is false || pawn.IsMutant) return true;
 
@@ -28,14 +28,7 @@ namespace CaptureExpansion
                     }
                     else
                     {
-                        if (pawn.ParentHolder is Building_HoldingPlatform)
-                        {
-                            pawn.TryGetComp<CompHoldingPlatformTarget>().targetHolder = bed;
-                        }
-                        else
-                        {
-                            pawn.ownership.ClaimBedIfNonMedical(bed);
-                        }
+                        pawn.TryGetComp<CompHoldingPlatformTarget>().targetHolder = bed;
                     }
                 }
                 else if (target.Thing is Building_HoldingPlatform platform)

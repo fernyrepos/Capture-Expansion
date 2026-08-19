@@ -9,9 +9,13 @@ namespace CaptureExpansion
     {
         public static void Postfix(CompHoldingPlatformTarget __instance)
         {
-            if (__instance.parent is Pawn pawn && pawn.RaceProps.Humanlike && pawn.IsMutant is false && pawn.IsPrisonerOfColony is false)
+            if (__instance.parent is Pawn pawn && pawn.RaceProps.Humanlike && pawn.IsMutant is false)
             {
-                pawn.guest?.CapturedBy(Faction.OfPlayer);
+                pawn.ownership?.UnclaimBed();
+                if (pawn.IsPrisonerOfColony is false)
+                {
+                    pawn.guest?.CapturedBy(Faction.OfPlayer);
+                }
             }
         }
     }

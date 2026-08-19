@@ -8,7 +8,7 @@ namespace CaptureExpansion
     {
         public override bool Satisfied(Pawn pawn)
         {
-            return pawn.IsPrisoner && PrisonBreakUtility.IsPrisonBreaking(pawn) is false && State.IsCaged(pawn);
+            return pawn.IsPrisoner && PrisonBreakUtility.IsPrisonBreaking(pawn) is false && !(pawn.TryGetComp<CompHoldingPlatformTarget>()?.isEscaping ?? false) && State.IsCaged(pawn);
         }
     }
 }
