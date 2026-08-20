@@ -105,7 +105,7 @@ namespace CaptureExpansion
             base.PostSpawnSetup(respawningAfterLoad);
             if (!respawningAfterLoad)
             {
-                graphicIndex = Props.topGraphics.NullOrEmpty() ? 0 : Rand.Range(0, Props.topGraphics.Count);
+                graphicIndex = 0;
             }
             EnsureGraphicIndex();
         }
@@ -134,6 +134,8 @@ namespace CaptureExpansion
                 defaultLabel = "CE_ChangeCageTopGraphic".Translate(),
                 defaultDesc = "CE_ChangeCageTopGraphicDesc".Translate(),
                 icon = TopGraphicData.Graphic.MatSingle.mainTexture as UnityEngine.Texture2D,
+                iconDrawScale = 1.3f,
+                iconOffset = new Vector2(0f, 0.08f),
                 action = () =>
                 {
                     graphicIndex = (graphicIndex + 1) % Props.topGraphics.Count;

@@ -197,10 +197,10 @@
         <pawnDrawOffsetEast>(-0.2, -0.01, 0.05)</pawnDrawOffsetEast>
         <pawnDrawOffsetWest>(0.2, -0.01, 0.05)</pawnDrawOffsetWest>
         <bodyDrawOffsetNorth>(0, -0.1, -0.15)</bodyDrawOffsetNorth>
-        <bodyDrawOffsetSouth>(0, -0.1, 0.15)</bodyDrawOffsetSouth>
+        <bodyDrawOffsetSouth>(0, 0.1, 0.15)</bodyDrawOffsetSouth>
         <headDrawOffsetNorth>(0, 0.05, -0.15)</headDrawOffsetNorth>
         <headDrawOffsetEast>(0, 0.05, 0)</headDrawOffsetEast>
-        <headDrawOffsetSouth>(0, 0.05, 0.15)</headDrawOffsetSouth>
+        <headDrawOffsetSouth>(0, -0.05, 0.15)</headDrawOffsetSouth>
         <headDrawOffsetWest>(0, 0.05, 0)</headDrawOffsetWest>
       </li>
     </modExtensions>
@@ -327,12 +327,6 @@
             <shaderType>Transparent</shaderType>
           </li>
           <li>
-            <texPath>Things/Building/DungeonProps/LargeCages/CageTop_Round_2x2</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>(4,4)</drawSize>
-            <shaderType>Transparent</shaderType>
-          </li>
-          <li>
             <texPath>Things/Building/DungeonProps/LargeCages/CageTop_Spike_2x2</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>(4,4)</drawSize>
@@ -384,12 +378,6 @@
             <shaderType>Transparent</shaderType>
           </li>
           <li>
-            <texPath>Things/Building/DungeonProps/LargeCages/CageTop_Round_3x2_north</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>(5,4)</drawSize>
-            <shaderType>Transparent</shaderType>
-          </li>
-          <li>
             <texPath>Things/Building/DungeonProps/LargeCages/CageTop_Spike_3x2_north</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>(5,4)</drawSize>
@@ -436,12 +424,6 @@
         <topGraphics>
           <li>
             <texPath>Things/Building/DungeonProps/LargeCages/CageTop_Flat_3x3</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>(5,5)</drawSize>
-            <shaderType>Transparent</shaderType>
-          </li>
-          <li>
-            <texPath>Things/Building/DungeonProps/LargeCages/CageTop_Round_3x3</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>(5,5)</drawSize>
             <shaderType>Transparent</shaderType>
