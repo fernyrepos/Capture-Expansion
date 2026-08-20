@@ -21,7 +21,9 @@ namespace CaptureExpansion
             {
                 return null;
             }
-            return JobMaker.MakeJob(DefsOf.CE_RestrainPrisonerToBed, prisoner, bed);
+            var job = JobMaker.MakeJob(DefsOf.CE_RestrainPrisonerToBed, prisoner, bed);
+            job.count = 1;
+            return job;
         }
     }
 }
