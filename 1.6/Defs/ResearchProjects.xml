@@ -57,4 +57,18 @@
     <researchViewX>6.00</researchViewX>
     <researchViewY>6.30</researchViewY>
   </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>CE_GuillotineResearch</defName>
+    <label>Guillotine</label>
+    <description>Build a blade restraint for beheading captives.</description>
+    <baseCost>400</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>Main</tab>
+    <researchViewX>7.00</researchViewX>
+    <researchViewY>6.30</researchViewY>
+    <prerequisites>
+      <li>CE_PilloryResearch</li>
+    </prerequisites>
+  </ResearchProjectDef>
 </Defs>

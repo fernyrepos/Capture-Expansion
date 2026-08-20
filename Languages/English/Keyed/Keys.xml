@@ -5,6 +5,10 @@
   <CE_RestrainToBed>Restrain to bed</CE_RestrainToBed>
   <CE_RequiresWalls>Requires walls on the adjacent left and right tiles.</CE_RequiresWalls>
   <CE_StripHeldEntity>Stripping {0}</CE_StripHeldEntity>
+  <CE_ActivateGuillotine>Activate guillotine</CE_ActivateGuillotine>
+  <CE_ActivateGuillotineDesc>Drop the blade and behead the captive held in this guillotine.</CE_ActivateGuillotineDesc>
+  <CE_ActivateGuillotineNoVictim>No captive is held in this guillotine.</CE_ActivateGuillotineNoVictim>
+  <CE_ActivateGuillotineConfirm>Behead {0}? This will kill them instantly.</CE_ActivateGuillotineConfirm>
 
   <!-- <LetterLabelEscapingFromHoldingPlatform>Captive escape</LetterLabelEscapingFromHoldingPlatform>  -->
   <LetterEscapingFromHoldingPlatform>The following captives have escaped their restraints:\n\n{0}\n\nBuild stronger containment rooms to stop captives from escaping. Captives are less likely to escape from restraints with high containment strength, which comes from strong walls and doors, good lighting, and special containment devices.</LetterEscapingFromHoldingPlatform> 

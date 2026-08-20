@@ -206,6 +206,60 @@
     </modExtensions>
   </ThingDef>
 
+  <ThingDef ParentName="CE_CapturePlatformBase">
+    <defName>CE_Guillotine</defName>
+    <label>guillotine</label>
+    <description>A restraint fitted with a weighted blade for beheading a captive.</description>
+    <researchPrerequisites>
+      <li>CE_GuillotineResearch</li>
+    </researchPrerequisites>
+    <graphicData>
+      <texPath>Things/Building/DungeonProps/Misc/Guillotine</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3,3)</drawSize>
+      <drawOffset>(0,0,0.25)</drawOffset>
+    </graphicData>
+    <uiIconScale>0.45</uiIconScale>
+    <uiIconOffset>(0,0.15)</uiIconOffset>
+    <size>(1,1)</size>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <costList>
+      <WoodLog>40</WoodLog>
+      <Steel>20</Steel>
+    </costList>
+    <statBases>
+      <WorkToBuild>1100</WorkToBuild>
+      <Mass>25</Mass>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_EntityHolderPlatform">
+        <containmentFactor>0.5</containmentFactor>
+      </li>
+      <li Class="CaptureExpansion.CompProperties_Guillotine">
+        <iconTexPath>Things/Building/DungeonProps/Misc/Guillotine_south</iconTexPath>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="CaptureExpansion.RestraintExtension">
+        <heldPawnPosture>LayingOnGroundNormal</heldPawnPosture>
+        <faceRotation>false</faceRotation>
+        <usePlatformAngle>false</usePlatformAngle>
+        <crawlingHeadNorth>true</crawlingHeadNorth>
+        <fixedRotation>North</fixedRotation>
+        <angleOffsetEast>-35</angleOffsetEast>
+        <angleOffsetWest>35</angleOffsetWest>
+        <pawnDrawOffsetEast>(-0.2, -0.01, 0.05)</pawnDrawOffsetEast>
+        <pawnDrawOffsetWest>(0.2, -0.01, 0.05)</pawnDrawOffsetWest>
+        <bodyDrawOffsetNorth>(0, -0.1, -0.15)</bodyDrawOffsetNorth>
+        <bodyDrawOffsetSouth>(0, 0.1, 0.15)</bodyDrawOffsetSouth>
+        <headDrawOffsetNorth>(0, 0.05, -0.15)</headDrawOffsetNorth>
+        <headDrawOffsetEast>(0, 0.05, 0)</headDrawOffsetEast>
+        <headDrawOffsetSouth>(0, -0.05, 0.15)</headDrawOffsetSouth>
+        <headDrawOffsetWest>(0, 0.05, 0)</headDrawOffsetWest>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
   <ThingDef ParentName="BedBase">
     <defName>CE_WallMountedCot</defName>
     <label>wall-mounted cot</label>
