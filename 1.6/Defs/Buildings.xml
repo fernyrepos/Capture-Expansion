@@ -248,10 +248,10 @@
         <fixedRotation>North</fixedRotation>
         <angleOffsetEast>-35</angleOffsetEast>
         <angleOffsetWest>35</angleOffsetWest>
-        <pawnDrawOffsetEast>(-0.2, -0.01, 0.05)</pawnDrawOffsetEast>
-        <pawnDrawOffsetWest>(0.2, -0.01, 0.05)</pawnDrawOffsetWest>
+        <pawnDrawOffsetEast>(-0.2, -0.01, 0.3)</pawnDrawOffsetEast>
+        <pawnDrawOffsetWest>(0.2, -0.01, 0.3)</pawnDrawOffsetWest>
         <bodyDrawOffsetNorth>(0, -0.1, -0.15)</bodyDrawOffsetNorth>
-        <bodyDrawOffsetSouth>(0, 0.1, 0.15)</bodyDrawOffsetSouth>
+        <bodyDrawOffsetSouth>(0, 0.1, 0.3)</bodyDrawOffsetSouth>
         <headDrawOffsetNorth>(0, 0.05, -0.15)</headDrawOffsetNorth>
         <headDrawOffsetEast>(0, 0.05, 0)</headDrawOffsetEast>
         <headDrawOffsetSouth>(0, -0.05, 0.15)</headDrawOffsetSouth>
