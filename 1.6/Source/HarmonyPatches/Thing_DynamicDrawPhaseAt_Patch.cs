@@ -18,7 +18,7 @@ namespace CaptureExpansion
         {
             if (phase != DrawPhase.Draw) return;
             var bed = __instance.CurrentBed();
-            if (bed != null && bed is not Building_Cage && __instance.guest != null && __instance.guest.IsInteractionEnabled(DefsOf.CE_RestrainToBed))
+            if (bed != null && bed is not Building_Cage && __instance.IsRestrained())
             {
                 var cornerX = (bed.def.size.x / 2f) - 0.05f;
                 var cornerZ = (bed.def.size.z / 2f) - 0.05f;

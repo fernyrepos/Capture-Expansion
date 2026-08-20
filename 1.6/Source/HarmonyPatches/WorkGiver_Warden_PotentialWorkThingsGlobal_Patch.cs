@@ -22,6 +22,7 @@ namespace CaptureExpansion
             {
                 if (platform.HeldPawn is { RaceProps.Humanlike: true, IsMutant: false, IsPrisonerOfColony: true } held)
                 {
+                    yield return platform;
                     yield return held;
                 }
             }

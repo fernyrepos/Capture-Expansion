@@ -13,4 +13,43 @@
       <li>Manipulation</li>
     </requiredCapacities>
   </WorkGiverDef>
+
+  <WorkGiverDef>
+    <defName>CE_TakeHeldPrisonerToBed</defName>
+    <label>take held prisoners to bed</label>
+    <giverClass>CaptureExpansion.WorkGiver_Warden_TakeHeldPrisonerToBed</giverClass>
+    <workType>Warden</workType>
+    <verb>take to bed</verb>
+    <gerund>taking to bed</gerund>
+    <priorityInType>91</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+
+  <WorkGiverDef>
+    <defName>CE_RestrainPrisonerToBed</defName>
+    <label>restrain prisoners to bed</label>
+    <giverClass>CaptureExpansion.WorkGiver_Warden_RestrainPrisonerToBed</giverClass>
+    <workType>Warden</workType>
+    <verb>restrain</verb>
+    <gerund>restraining</gerund>
+    <priorityInType>92</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+
+  <WorkGiverDef>
+    <defName>CE_UnrestrainPrisonerFromBed</defName>
+    <label>unrestrain prisoners from bed</label>
+    <giverClass>CaptureExpansion.WorkGiver_Warden_UnrestrainPrisonerFromBed</giverClass>
+    <workType>Warden</workType>
+    <verb>unrestrain</verb>
+    <gerund>unrestraining</gerund>
+    <priorityInType>93</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </WorkGiverDef>
 </Defs>

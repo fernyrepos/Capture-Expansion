@@ -9,12 +9,7 @@ namespace CaptureExpansion
     {
         public static void Postfix(Thing t, Pawn pawn, ref bool __result)
         {
-            if (__result || pawn.IsPrisoner is false || PrisonBreakUtility.IsPrisonBreaking(pawn) || pawn.ownership?.OwnedBed == null) return;
-            if (State.IsRestrained(pawn) && pawn.ownership.OwnedBed.OccupiedRect().Contains(t.Position) is false)
-            {
-                __result = true;
-            }
-            else if (State.IsCaged(pawn) && pawn.ownership.OwnedBed is Building_Cage cage && cage.WanderCells.Contains(t.Position) is false)
+            if (!(__result || pawn.IsPrisoner is false || PrisonBreakUtility.IsPrisonBreaking(pawn) || pawn.ownership?.OwnedBed == null) && pawn.IsCaged() && pawn.ownership.OwnedBed is Building_Cage cage && cage.WanderCells.Contains(t.Position) is false)
             {
                 __result = true;
             }

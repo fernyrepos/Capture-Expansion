@@ -13,8 +13,7 @@ namespace CaptureExpansion
 
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
-            if (pawn.Reserve(Platform, job, 1, -1, null, errorOnFailed) is false) return false;
-            if (pawn.Reserve(DropBed, job, DropBed.SleepingSlotsCount, 0, null, errorOnFailed) is false) return false;
+            if (pawn.Reserve(Platform, job, 1, -1, null, errorOnFailed) is false || pawn.Reserve(DropBed, job, DropBed.SleepingSlotsCount, 0, null, errorOnFailed) is false) return false;
             return true;
         }
 
@@ -43,8 +42,8 @@ namespace CaptureExpansion
             {
                 if (Platform is Building_HoldingPlatform holdingPlatform && holdingPlatform.HeldPawn == Prisoner)
                 {
-                    holdingPlatform.EjectContents();
-                    pawn.carryTracker.TryStartCarry(Prisoner);
+                    holdingPlatform.HeldPawn.GetComp<CompHoldingPlatformTarget>()?.Notify_ReleasedFromPlatform();
+                    pawn.carryTracker.innerContainer.TryAddOrTransfer(Prisoner);
                 }
             };
             takePawn.defaultCompleteMode = ToilCompleteMode.Instant;

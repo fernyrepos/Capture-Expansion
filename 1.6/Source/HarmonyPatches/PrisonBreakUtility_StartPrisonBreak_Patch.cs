@@ -25,6 +25,11 @@ namespace CaptureExpansion
     {
         public static void Postfix(Pawn initiator)
         {
+            var hediff = initiator.health.hediffSet.GetFirstHediffOfDef(DefsOf.CE_RestrainedToBed);
+            if (hediff != null)
+            {
+                initiator.health.RemoveHediff(hediff);
+            }
             initiator.guest?.ToggleNonExclusiveInteraction(DefsOf.CE_RestrainToBed, false);
         }
     }

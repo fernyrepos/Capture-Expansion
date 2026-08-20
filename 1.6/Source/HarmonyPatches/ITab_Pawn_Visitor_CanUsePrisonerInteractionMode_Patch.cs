@@ -26,7 +26,7 @@ namespace CaptureExpansion
 
         public static void Postfix(Pawn pawn, PrisonerInteractionModeDef mode, ref bool __result)
         {
-            if (__result && mode == DefsOf.CE_RestrainToBed && State.IsCaged(pawn))
+            if (__result && mode == DefsOf.CE_RestrainToBed && (pawn.IsCaged() || pawn.IsOnHoldingPlatform))
             {
                 __result = false;
             }

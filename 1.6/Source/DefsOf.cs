@@ -11,5 +11,11 @@ namespace CaptureExpansion
         public static JobDef CE_TakeHeldPrisonerToBed;
 
         public static PrisonerInteractionModeDef CE_RestrainToBed;
+
+        public static HediffDef CE_RestrainedToBed;
+
+        public static JobDef CE_RestrainPrisonerToBed;
+
+        public static JobDef CE_UnrestrainPrisonerFromBed;
     }
 }
