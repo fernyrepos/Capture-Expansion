@@ -17,5 +17,9 @@ namespace CaptureExpansion
         public static JobDef CE_RestrainPrisonerToBed;
 
         public static JobDef CE_UnrestrainPrisonerFromBed;
+
+        public static SoundDef EntityChainHigh;
+
+        public static SoundDef EntityChainLow;
     }
 }
