@@ -52,4 +52,17 @@
       <li>Manipulation</li>
     </requiredCapacities>
   </WorkGiverDef>
+
+  <WorkGiverDef>
+    <defName>CE_ActivateGuillotine</defName>
+    <label>execute guillotine prisoners</label>
+    <giverClass>CaptureExpansion.WorkGiver_Warden_ActivateGuillotine</giverClass>
+    <workType>Warden</workType>
+    <verb>execute</verb>
+    <gerund>executing</gerund>
+    <priorityInType>94</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </WorkGiverDef>
 </Defs>

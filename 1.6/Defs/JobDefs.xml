@@ -23,4 +23,10 @@
     <reportString>unrestraining TargetA.</reportString>
     <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
   </JobDef>
+  <JobDef>
+    <defName>CE_ActivateGuillotine</defName>
+    <driverClass>CaptureExpansion.JobDriver_ActivateGuillotine</driverClass>
+    <reportString>executing TargetB.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
 </Defs>

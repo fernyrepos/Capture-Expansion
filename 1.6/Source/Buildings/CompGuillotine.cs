@@ -20,17 +20,37 @@ namespace CaptureExpansion
     {
         private Texture2D cachedIcon;
 
+        public bool Activated;
+
         public CompProperties_Guillotine Props => (CompProperties_Guillotine)props;
 
         private Building_HoldingPlatform Platform => parent as Building_HoldingPlatform;
 
         private Texture2D Icon => cachedIcon ??= ContentFinder<Texture2D>.Get(Props.iconTexPath);
 
+        public override void PostExposeData()
+        {
+            base.PostExposeData();
+            Scribe_Values.Look(ref Activated, "guillotineActivated");
+        }
+
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
             foreach (var gizmo in base.CompGetGizmosExtra())
             {
                 yield return gizmo;
+            }
+
+            if (Activated)
+            {
+                yield return new Command_Action
+                {
+                    defaultLabel = "CE_CancelGuillotine".Translate(),
+                    defaultDesc = "CE_CancelGuillotineDesc".Translate(),
+                    icon = Icon,
+                    action = () => Activated = false
+                };
+                yield break;
             }
 
             var victim = Platform?.HeldPawn;
@@ -45,13 +65,13 @@ namespace CaptureExpansion
                 {
                     Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation(
                         "CE_ActivateGuillotineConfirm".Translate(victim.LabelShortCap),
-                        () => Behead(victim),
+                        () => Activated = true,
                         destructive: true));
                 }
             };
         }
 
-        private static void Behead(Pawn victim)
+        public static void Behead(Pawn victim)
         {
             if (victim == null || victim.Dead)
             {

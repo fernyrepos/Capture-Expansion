@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <SoundDef>
+    <defName>CE_GuillotineActivate</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Guillotine</clipPath>
+          </li>
+        </grains>
+        <distRange>25~50</distRange>
+        <volumeRange>65</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+</Defs>
