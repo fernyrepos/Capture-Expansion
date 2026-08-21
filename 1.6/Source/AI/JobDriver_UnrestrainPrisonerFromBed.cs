@@ -30,6 +30,7 @@ namespace CaptureExpansion
                 {
                     Prisoner.health.RemoveHediff(hediff);
                 }
+                Prisoner.jobs.ClearQueuedJobs();
             });
         }
     }
