@@ -27,7 +27,15 @@ namespace CaptureExpansion
         public static bool IsCaged(this Pawn pawn)
         {
             if (pawn.IsOnHoldingPlatform) return false;
-            if (pawn.ownership?.OwnedBed is Building_Cage || pawn.Spawned && pawn.Map.thingGrid.ThingsListAtFast(pawn.Position).Any(t => t is Building_Cage)) return true;
+            if (pawn.ownership?.OwnedBed is Building_Cage) return true;
+            if (pawn.Spawned)
+            {
+                var things = pawn.Map.thingGrid.ThingsListAtFast(pawn.Position);
+                for (int i = 0; i < things.Count; i++)
+                {
+                    if (things[i] is Building_Cage) return true;
+                }
+            }
             return false;
         }
     }

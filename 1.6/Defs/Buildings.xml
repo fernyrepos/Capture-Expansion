@@ -11,13 +11,7 @@
     <pathCost>30</pathCost>
     <canOverlapZones>false</canOverlapZones>
     <defaultPlacingRot>North</defaultPlacingRot>
-    <minMonolithLevel>1</minMonolithLevel>
     <designationCategory>Anomaly</designationCategory>
-    <building>
-      <buildingTags>
-        <li>Anomaly</li>
-      </buildingTags>
-    </building>
     <comps>
       <li Class="CompProperties_AffectedByFacilities">
         <linkableFacilities />

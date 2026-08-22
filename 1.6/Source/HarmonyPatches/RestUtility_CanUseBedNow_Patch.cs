@@ -35,5 +35,24 @@ namespace CaptureExpansion
             __result = (guestStatusOverride ?? sleeper.GuestStatus) == GuestStatus.Prisoner;
             return false;
         }
+
+        public static void Postfix(Thing bedThing, Pawn sleeper, ref bool __result)
+        {
+            if (!__result || bedThing is not Building_Bed bed || bed is Building_Cage) return;
+
+            var baseSlots = BedUtility.GetSleepingSlotsCount(bed.def.size);
+            if (baseSlots <= 1) return;
+
+            var isSleeperRestrained = sleeper.health.hediffSet.HasHediff(DefsOf.CE_RestrainedToBed);
+            for (var i = 0; i < baseSlots; i++)
+            {
+                var occupant = bed.GetCurOccupant(i);
+                if (occupant != null && occupant != sleeper && (occupant.health.hediffSet.HasHediff(DefsOf.CE_RestrainedToBed) || isSleeperRestrained))
+                {
+                    __result = false;
+                    return;
+                }
+            }
+        }
     }
 }

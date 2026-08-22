@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -61,6 +62,12 @@ namespace CaptureExpansion
                 Graphic.Draw(drawLoc, flip ? Rotation.Opposite : Rotation, this);
             }
             SilhouetteUtility.DrawGraphicSilhouette(this, drawLoc);
+        }
+
+        public override void SpawnSetup(Map map, bool respawningAfterLoad)
+        {
+            base.SpawnSetup(map, respawningAfterLoad);
+            this.def.inspectorTabsResolved ??= new List<InspectTabBase>();
         }
     }
 }

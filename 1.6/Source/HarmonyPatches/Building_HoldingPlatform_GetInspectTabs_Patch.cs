@@ -16,15 +16,11 @@ namespace CaptureExpansion
             }
             if (__instance.HeldPawn is { RaceProps.Humanlike: true, IsMutant: false } held)
             {
-                if (held.IsPrisonerOfColony is false && held.Faction != Faction.OfPlayer)
-                {
-                    held.guest?.CapturedBy(Faction.OfPlayer);
-                }
-                yield return InspectTabManager.GetSharedInstance(typeof(ITab_Pawn_Prisoner));
-                yield return InspectTabManager.GetSharedInstance(typeof(ITab_Pawn_Needs));
                 yield return InspectTabManager.GetSharedInstance(typeof(ITab_Pawn_Health));
+                yield return InspectTabManager.GetSharedInstance(typeof(ITab_Pawn_Needs));
                 yield return InspectTabManager.GetSharedInstance(typeof(ITab_Pawn_Character));
                 yield return InspectTabManager.GetSharedInstance(typeof(ITab_Pawn_Social));
+                yield return InspectTabManager.GetSharedInstance(typeof(ITab_Pawn_Prisoner));
                 yield return InspectTabManager.GetSharedInstance(typeof(ITab_Pawn_Gear));
                 yield return InspectTabManager.GetSharedInstance(typeof(ITab_Pawn_Log));
             }
