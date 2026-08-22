@@ -68,6 +68,7 @@
     <researchPrerequisites>
       <li>CE_RestraintRackResearch</li>
     </researchPrerequisites>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
     <graphicData>
       <texPath>Things/Building/DungeonProps/Misc/TortureRack</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
@@ -257,7 +258,11 @@
   <ThingDef ParentName="BedBase">
     <defName>CE_WallMountedCot</defName>
     <label>wall-mounted cot</label>
-    <description>todo</description>
+    <description>A cheap and rough wooden board mounted to a wall, uncomfortable and thus commonly used in prisons.</description>
+    <researchPrerequisites>
+      <li>CE_WallMountedCotResearch</li>
+    </researchPrerequisites>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
     <graphicData>
       <texPath>Things/Building/DungeonProps/Misc/RusticPrisonBed</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
@@ -281,7 +286,7 @@
     <statBases>
       <WorkToBuild>800</WorkToBuild>
       <Mass>30</Mass>
-      <Comfort>0.4</Comfort>
+      <Comfort>0.2</Comfort>
       <BedRestEffectiveness>0.4</BedRestEffectiveness>
       <ImmunityGainSpeedFactor>1.05</ImmunityGainSpeedFactor>
       <TerrorSource MayRequire="Ludeon.RimWorld.Ideology">5</TerrorSource>
@@ -290,7 +295,7 @@
     <stuffCategories>
       <li>Woody</li>
     </stuffCategories>
-    <costStuffCount>15</costStuffCount>
+    <costStuffCount>20</costStuffCount>
     <comps>
       <li Class="CompProperties_AssignableToPawn">
         <drawAssignmentOverlay>false</drawAssignmentOverlay>

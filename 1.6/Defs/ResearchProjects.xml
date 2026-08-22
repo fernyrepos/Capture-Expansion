@@ -71,4 +71,15 @@
       <li>CE_PilloryResearch</li>
     </prerequisites>
   </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>CE_WallMountedCotResearch</defName>
+    <label>Wall-mounted cot</label>
+    <description>Build a rough sleeping board mounted against a wall.</description>
+    <baseCost>350</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>Main</tab>
+    <researchViewX>4.00</researchViewX>
+    <researchViewY>6.90</researchViewY>
+  </ResearchProjectDef>
 </Defs>
