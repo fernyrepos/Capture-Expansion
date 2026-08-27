@@ -17,7 +17,8 @@ namespace CaptureExpansion
             }
             if (State.IsRestrained(p) || State.IsCaged(p))
             {
-                return ThoughtState.ActiveDefault;
+                var isMasochist = p.story?.traits?.HasTrait(DefsOf.Masochist) ?? false;
+                return ThoughtState.ActiveAtStage(isMasochist ? 1 : 0);
             }
             return ThoughtState.Inactive;
         }

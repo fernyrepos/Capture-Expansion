@@ -24,6 +24,8 @@ namespace CaptureExpansion
 
         public static ThingDef Skull;
 
+        public static TraitDef Masochist;
+
         public static SoundDef EntityChainHigh;
 
         public static SoundDef EntityChainLow;

@@ -10,6 +10,11 @@
         <description>I am locked down and bound with no freedom of movement. It's humiliating and agonizing.</description>
         <baseMoodEffect>-15</baseMoodEffect>
       </li>
+      <li>
+        <label>brutally restrained</label>
+        <description>I am locked down and bound with no freedom of movement. I love every second of it.</description>
+        <baseMoodEffect>15</baseMoodEffect>
+      </li>
     </stages>
   </ThoughtDef>
 </Defs>
