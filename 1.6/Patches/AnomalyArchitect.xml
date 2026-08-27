@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/DesignationCategoryDef[defName="Anomaly"]/minMonolithLevel</xpath>
+    <value>
+      <minMonolithLevel>0</minMonolithLevel>
+    </value>
+  </Operation>
+</Patch>
