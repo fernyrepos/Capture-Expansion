@@ -15,7 +15,7 @@ namespace CaptureExpansion
             {
                 return;
             }
-            var canReserveAndReach = warden.CanReserveAndReach(platform, PathEndMode.ClosestTouch, warden.NormalMaxDanger(), 1, -1, null, forced);
+            var canReserveAndReach = warden.CanReserveAndReach(platform, PathEndMode.ClosestTouch, warden.NormalMaxDanger(), 1, -1, null, forced) && warden.CanReserve(p, 1, -1, null, forced);
             if (p.IsPrisonerOfColony is false || p.guest.PrisonerIsSecure is false || p.InAggroMentalState || prisoner.IsForbidden(warden) || p.IsFormingCaravan() || canReserveAndReach is false)
             {
                 return;

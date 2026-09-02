@@ -68,6 +68,10 @@ namespace CaptureExpansion
         {
             base.SpawnSetup(map, respawningAfterLoad);
             this.def.inspectorTabsResolved ??= new List<InspectTabBase>();
+            if (HeldPawn != null)
+            {
+                HeldPawn.Position = Position;
+            }
         }
     }
 }

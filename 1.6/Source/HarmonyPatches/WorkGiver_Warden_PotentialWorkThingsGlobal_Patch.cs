@@ -20,10 +20,9 @@ namespace CaptureExpansion
             }
             foreach (var platform in pawn.Map.listerThings.ThingsInGroup(ThingRequestGroup.EntityHolder).OfType<Building_HoldingPlatform>())
             {
-                if (platform.HeldPawn is { RaceProps.Humanlike: true, IsMutant: false, IsPrisonerOfColony: true } held)
+                if (platform.HeldPawn is { RaceProps.Humanlike: true, IsMutant: false, IsPrisonerOfColony: true })
                 {
                     yield return platform;
-                    yield return held;
                 }
             }
         }
