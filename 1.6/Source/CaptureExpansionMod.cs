@@ -5,9 +5,11 @@ namespace CaptureExpansion
 {
     public class CaptureExpansionMod : Mod
     {
+        public static Harmony harmony;
         public CaptureExpansionMod(ModContentPack pack) : base(pack)
         {
-            new Harmony("ferny.CaptureExpansion").PatchAll();
+            harmony = new Harmony("ferny.CaptureExpansion");
+            harmony.PatchAll();
         }
     }
 }

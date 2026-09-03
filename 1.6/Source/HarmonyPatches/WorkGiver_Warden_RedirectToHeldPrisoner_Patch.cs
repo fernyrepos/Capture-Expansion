@@ -6,10 +6,17 @@ using Verse;
 
 namespace CaptureExpansion
 {
-    [HarmonyPatch]
-    [HarmonyPriority(Priority.High)]
+    [StaticConstructorOnStartup]
     public static class WorkGiver_Warden_RedirectToHeldPrisoner_Patch
     {
+        static WorkGiver_Warden_RedirectToHeldPrisoner_Patch()
+        {
+            var prefix = AccessTools.Method(typeof(WorkGiver_Warden_RedirectToHeldPrisoner_Patch), "Prefix");
+            foreach (var method in TargetMethods())
+            {
+                CaptureExpansionMod.harmony.Patch(method, prefix: new HarmonyMethod(prefix));
+            }
+        }
         public static IEnumerable<MethodBase> TargetMethods()
         {
             foreach (var type in GenTypes.AllSubclasses(typeof(WorkGiver_Warden)))
