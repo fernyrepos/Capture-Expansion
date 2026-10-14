@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using CaptureExpansion.Compatibility.Ideology;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -45,18 +46,26 @@ namespace CaptureExpansion
 
             var victim = Platform?.HeldPawn;
             var noPower = powerComp is { PowerOn: false };
+            bool ritualInProgress = victim != null && !noPower && RitualExecutionUtility.RitualInProgress(Platform);
             yield return new Command_Action
             {
                 defaultLabel = "CE_ActivateElectricChair".Translate(),
                 defaultDesc = "CE_ActivateElectricChairDesc".Translate(),
                 icon = Icon,
-                disabled = victim == null || noPower,
-                disabledReason = noPower ? "CE_ActivateElectricChairNoPower".Translate() : "CE_ActivateElectricChairNoVictim".Translate(),
+                disabled = victim == null || noPower || ritualInProgress,
+                disabledReason = ritualInProgress ? "CE_RitualExecutionBusy".Translate() : noPower ? "CE_ActivateElectricChairNoPower".Translate() : "CE_ActivateElectricChairNoVictim".Translate(),
                 action = () =>
                 {
                     Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation(
                         "CE_ActivateElectricChairConfirm".Translate(victim.LabelShortCap),
-                        () => Activated = true,
+                        () =>
+                        {
+                            if (RitualExecutionUtility.RitualInProgress(Platform))
+                                Messages.Message("CE_RitualExecutionBusy".Translate(), parent,
+                                    MessageTypeDefOf.RejectInput, false);
+                            else
+                                Activated = true;
+                        },
                         destructive: true));
                 }
             };

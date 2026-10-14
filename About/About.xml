@@ -36,5 +36,6 @@
         <li>brrainz.harmony</li>
         <li>OskarPotocki.VanillaFactionsExpanded.Core</li>
         <li>VanillaExpanded.VFECore</li>
+        <li>Mersid.WCE2Updated.Core</li>
     </loadAfter>
 </ModMetaData>

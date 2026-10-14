@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <CE_ChangeCageTopGraphic>Change visual</CE_ChangeCageTopGraphic>
   <CE_ChangeCageTopGraphicDesc>Cycle this cage to the next top graphic variation.</CE_ChangeCageTopGraphicDesc>
@@ -24,5 +24,15 @@
 
   <TransferEntityDesc>Transfer the contained captive to another holding platform.</TransferEntityDesc>
   <CancelTransferDesc>Cancel transferring this captive to another holding platform.</CancelTransferDesc>
-
+  <CE_RitualDeviceUnavailable>The execution device is unavailable.</CE_RitualDeviceUnavailable>
+  <CE_RitualDeviceUnsafe>The execution device is forbidden or burning.</CE_RitualDeviceUnsafe>
+  <CE_RitualNeedsPrisoner>Choose a living colony prisoner.</CE_RitualNeedsPrisoner>
+  <CE_RitualPrisonerUnavailable>The prisoner is released, escaping, or leaving the map.</CE_RitualPrisonerUnavailable>
+  <CE_RitualPrisonerBusy>The prisoner is already participating in another activity.</CE_RitualPrisonerBusy>
+  <CE_RitualOrdinaryExecutionQueued>Cancel the queued execution before beginning a ritual.</CE_RitualOrdinaryExecutionQueued>
+  <CE_RitualIncompatibleStages>This ritual cannot use the execution device.</CE_RitualIncompatibleStages>
+  <CE_RitualMissingPrisonerRole>This ritual has no prisoner role.</CE_RitualMissingPrisonerRole>
+  <CE_RitualPrisonerChanged>The device's prisoner changed. Close this dialog and begin the ritual again.</CE_RitualPrisonerChanged>
+  <CE_RitualExecutionBusy>A ritual is using this execution device.</CE_RitualExecutionBusy>
+  <CE_RitualCannotRestrain>This prisoner cannot be restrained in the device.</CE_RitualCannotRestrain>
 </LanguageData>
