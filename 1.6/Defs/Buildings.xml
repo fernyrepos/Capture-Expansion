@@ -154,6 +154,46 @@
   </ThingDef>
 
   <ThingDef ParentName="CE_CapturePlatformBase">
+    <defName>CE_RestraintCross</defName>
+    <label>restraint cross</label>
+    <description>An upright wooden cross fitted with restraints for displaying and immobilizing a captive.</description>
+    <researchPrerequisites>
+      <li>CE_RestraintCrossResearch</li>
+    </researchPrerequisites>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <graphicData>
+      <texPath>Things/Building/DungeonProps/Misc/Cross</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <uiIconScale>0.65</uiIconScale>
+    <size>(1,1)</size>
+    <stuffCategories>
+      <li>Woody</li>
+    </stuffCategories>
+    <costStuffCount>50</costStuffCount>
+    <statBases>
+      <WorkToBuild>900</WorkToBuild>
+      <Mass>25</Mass>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_EntityHolderPlatform">
+        <containmentFactor>0.5</containmentFactor>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="CaptureExpansion.RestraintExtension">
+        <heldPawnPosture>Standing</heldPawnPosture>
+        <faceRotation>false</faceRotation>
+        <pawnDrawOffsetNorth>(0, 0.01, 0.35)</pawnDrawOffsetNorth>
+        <pawnDrawOffsetEast>(0, 0.01, 0.35)</pawnDrawOffsetEast>
+        <pawnDrawOffsetSouth>(0, -1, 0.35)</pawnDrawOffsetSouth>
+        <pawnDrawOffsetWest>(0, 0.01, 0.35)</pawnDrawOffsetWest>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef ParentName="CE_CapturePlatformBase">
     <defName>CE_Pillory</defName>
     <label>pillory</label>
     <description>A wooden restraint that holds a prisoner upright by the neck and wrists.</description>
@@ -212,7 +252,7 @@
       <texPath>Things/Building/DungeonProps/Misc/Guillotine</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
 			<drawSize>(3,3)</drawSize>
-      <drawOffset>(0,0,0.25)</drawOffset>
+      <drawOffset>(0,0,0.2)</drawOffset>
     </graphicData>
     <uiIconScale>0.45</uiIconScale>
     <uiIconOffset>(0,0.15)</uiIconOffset>
@@ -251,6 +291,115 @@
         <headDrawOffsetEast>(0, 0.05, 0)</headDrawOffsetEast>
         <headDrawOffsetSouth>(0, -0.05, 0.15)</headDrawOffsetSouth>
         <headDrawOffsetWest>(0, 0.05, 0)</headDrawOffsetWest>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef ParentName="CE_CapturePlatformBase">
+    <defName>CE_ElectricChair</defName>
+    <thingClass>CaptureExpansion.Building_ElectricChair</thingClass>
+    <label>electric chair</label>
+    <description>A powered chair fitted with restraints and a wired helmet for electrocuting a captive.</description>
+    <researchPrerequisites>
+      <li>CE_ElectricChairResearch</li>
+    </researchPrerequisites>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <graphicData>
+      <texPath>Things/Building/DungeonProps/Misc/CuffsChair</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>3</drawSize>
+      <drawOffset>(0,0,0.2)</drawOffset>
+    </graphicData>
+    <uiIconScale>0.6</uiIconScale>
+    <size>(1,1)</size>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+    </stuffCategories>
+    <costStuffCount>50</costStuffCount>
+    <costList>
+      <Steel>30</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <statBases>
+      <WorkToBuild>1500</WorkToBuild>
+      <Mass>30</Mass>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_EntityHolderPlatform">
+        <containmentFactor>0.6</containmentFactor>
+      </li>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>200</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CaptureExpansion.CompProperties_ElectricChair">
+        <iconTexPath>UI/Commands/ActivateEC</iconTexPath>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="CaptureExpansion.RestraintExtension">
+        <heldPawnPosture>Standing</heldPawnPosture>
+        <faceRotation>false</faceRotation>
+        <pawnDrawOffsetNorth>(0, 0.01, 0.4)</pawnDrawOffsetNorth>
+        <pawnDrawOffsetEast>(0.18, 0.01, 0.5)</pawnDrawOffsetEast>
+        <pawnDrawOffsetSouth>(0, -1, 0.4)</pawnDrawOffsetSouth>
+        <pawnDrawOffsetWest>(-0.18, 0.01, 0.5)</pawnDrawOffsetWest>
+      </li>
+      <li Class="CaptureExpansion.ElectricChairExtension">
+        <headCoverGraphicData>
+          <texPath>Things/Building/DungeonProps/Misc/ElectricChair_HeadCover</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <shaderType>CutoutComplex</shaderType>
+          <drawSize>3</drawSize>
+        </headCoverGraphicData>
+        <headCoverDrawOffsetNorth>(0, 0, 0.2)</headCoverDrawOffsetNorth>
+        <headCoverDrawOffsetEast>(0, 0, 0.2)</headCoverDrawOffsetEast>
+        <headCoverDrawOffsetSouth>(0, 0, 0.2)</headCoverDrawOffsetSouth>
+        <headCoverDrawOffsetWest>(0, 0, 0.2)</headCoverDrawOffsetWest>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef ParentName="CE_CapturePlatformBase">
+    <defName>CE_XFrameRestraint</defName>
+    <label>X-frame restraint</label>
+    <description>An X-shaped frame for restraining a captive in a spread-eagle stance.</description>
+    <researchPrerequisites>
+      <li>CE_XFrameRestraintResearch</li>
+    </researchPrerequisites>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <graphicData>
+      <texPath>Things/Building/DungeonProps/Misc/XRack</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <uiIconScale>0.75</uiIconScale>
+    <uiIconOffset>(0,0.15)</uiIconOffset>
+    <size>(1,1)</size>
+    <rotatable>false</rotatable>
+    <stuffCategories>
+      <li>Woody</li>
+      <li>Metallic</li>
+    </stuffCategories>
+    <costStuffCount>30</costStuffCount>
+    <statBases>
+      <WorkToBuild>900</WorkToBuild>
+      <Mass>20</Mass>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_EntityHolderPlatform">
+        <containmentFactor>0.5</containmentFactor>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="CaptureExpansion.RestraintExtension">
+        <heldPawnPosture>Standing</heldPawnPosture>
+        <faceRotation>false</faceRotation>
+        <pawnDrawOffsetNorth>(0, 0.01, 0.5)</pawnDrawOffsetNorth>
       </li>
     </modExtensions>
   </ThingDef>

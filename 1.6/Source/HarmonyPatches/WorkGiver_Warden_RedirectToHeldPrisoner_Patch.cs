@@ -11,10 +11,10 @@ namespace CaptureExpansion
     {
         static WorkGiver_Warden_RedirectToHeldPrisoner_Patch()
         {
-            var prefix = AccessTools.Method(typeof(WorkGiver_Warden_RedirectToHeldPrisoner_Patch), "Prefix");
+            var prefix = new HarmonyMethod(AccessTools.Method(typeof(WorkGiver_Warden_RedirectToHeldPrisoner_Patch), "Prefix")) { priority = Priority.First };
             foreach (var method in TargetMethods())
             {
-                CaptureExpansionMod.harmony.Patch(method, prefix: new HarmonyMethod(prefix));
+                CaptureExpansionMod.harmony.Patch(method, prefix: prefix);
             }
         }
         public static IEnumerable<MethodBase> TargetMethods()

@@ -57,6 +57,20 @@
   </ResearchProjectDef>
 
   <ResearchProjectDef>
+    <defName>CE_RestraintCrossResearch</defName>
+    <label>Restraint cross</label>
+    <description>Build an upright cross for restraining and displaying captives.</description>
+    <baseCost>300</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>Main</tab>
+    <researchViewX>6.00</researchViewX>
+    <researchViewY>5.70</researchViewY>
+    <prerequisites>
+      <li>CE_RestraintPoleResearch</li>
+    </prerequisites>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
     <defName>CE_PilloryResearch</defName>
     <label>Pillory</label>
     <description>Build a wooden public restraint for captives.</description>
@@ -81,6 +95,35 @@
     <researchViewY>6.30</researchViewY>
     <prerequisites>
       <li>CE_PilloryResearch</li>
+    </prerequisites>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>CE_ElectricChairResearch</defName>
+    <label>Electric chair</label>
+    <description>Build a powered restraint chair for electrocuting captives.</description>
+    <baseCost>700</baseCost>
+    <techLevel>Industrial</techLevel>
+    <tab>Main</tab>
+    <researchViewX>6.00</researchViewX>
+    <researchViewY>7.50</researchViewY>
+    <prerequisites>
+      <li>CE_RestraintChairResearch</li>
+      <li>Electricity</li>
+    </prerequisites>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>CE_XFrameRestraintResearch</defName>
+    <label>X-frame restraint</label>
+    <description>Build an X-shaped frame for restraining a captive in a spread-eagle stance.</description>
+    <baseCost>300</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>Main</tab>
+    <researchViewX>7.00</researchViewX>
+    <researchViewY>6.90</researchViewY>
+    <prerequisites>
+      <li>CE_RestraintChairResearch</li>
     </prerequisites>
   </ResearchProjectDef>
 

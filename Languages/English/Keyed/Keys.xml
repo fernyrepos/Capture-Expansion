@@ -11,6 +11,13 @@
   <CE_ActivateGuillotineConfirm>Order a warden to behead {0}? This will kill them.</CE_ActivateGuillotineConfirm>
   <CE_CancelGuillotine>Cancel execution</CE_CancelGuillotine>
   <CE_CancelGuillotineDesc>Cancel the queued execution order for this guillotine.</CE_CancelGuillotineDesc>
+  <CE_ActivateElectricChair>Activate electric chair</CE_ActivateElectricChair>
+  <CE_ActivateElectricChairDesc>Queue a warden to electrocute the captive held in this chair.</CE_ActivateElectricChairDesc>
+  <CE_ActivateElectricChairNoVictim>No captive is held in this electric chair.</CE_ActivateElectricChairNoVictim>
+  <CE_ActivateElectricChairNoPower>This electric chair has no power.</CE_ActivateElectricChairNoPower>
+  <CE_ActivateElectricChairConfirm>Order a warden to electrocute {0}? This will kill them.</CE_ActivateElectricChairConfirm>
+  <CE_CancelElectricChair>Cancel execution</CE_CancelElectricChair>
+  <CE_CancelElectricChairDesc>Cancel the queued execution order for this electric chair.</CE_CancelElectricChairDesc>
 
   <!-- <LetterLabelEscapingFromHoldingPlatform>Captive escape</LetterLabelEscapingFromHoldingPlatform>  -->
   <LetterEscapingFromHoldingPlatform>The following captives have escaped their restraints:\n\n{0}\n\nBuild stronger containment rooms to stop captives from escaping. Captives are less likely to escape from restraints with high containment strength, which comes from strong walls and doors, good lighting, and special containment devices.</LetterEscapingFromHoldingPlatform> 

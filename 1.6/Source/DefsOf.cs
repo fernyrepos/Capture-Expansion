@@ -22,6 +22,12 @@ namespace CaptureExpansion
 
         public static SoundDef CE_GuillotineActivate;
 
+        public static JobDef CE_ActivateElectricChair;
+
+        public static SoundDef CE_ElectricChairActivate;
+
+        public static DamageDef CE_ExecutionElectrocution;
+
         public static ThingDef Skull;
 
         public static TraitDef Masochist;

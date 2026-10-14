@@ -65,4 +65,17 @@
       <li>Manipulation</li>
     </requiredCapacities>
   </WorkGiverDef>
+
+  <WorkGiverDef>
+    <defName>CE_ActivateElectricChair</defName>
+    <label>execute electric chair prisoners</label>
+    <giverClass>CaptureExpansion.WorkGiver_Warden_ActivateElectricChair</giverClass>
+    <workType>Warden</workType>
+    <verb>execute at</verb>
+    <gerund>execution at</gerund>
+    <priorityInType>95</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </WorkGiverDef>
 </Defs>

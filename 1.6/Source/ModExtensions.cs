@@ -70,6 +70,24 @@ namespace CaptureExpansion
         }
     }
 
+    public class ElectricChairExtension : DefModExtension
+    {
+        public GraphicData headCoverGraphicData;
+        public Vector3? headCoverDrawOffsetNorth;
+        public Vector3? headCoverDrawOffsetEast;
+        public Vector3? headCoverDrawOffsetSouth;
+        public Vector3? headCoverDrawOffsetWest;
+
+        public Vector3 HeadCoverDrawOffsetFor(Rot4 rot)
+        {
+            if (rot == Rot4.North && headCoverDrawOffsetNorth.HasValue) return headCoverDrawOffsetNorth.Value;
+            if (rot == Rot4.East && headCoverDrawOffsetEast.HasValue) return headCoverDrawOffsetEast.Value;
+            if (rot == Rot4.South && headCoverDrawOffsetSouth.HasValue) return headCoverDrawOffsetSouth.Value;
+            if (rot == Rot4.West && headCoverDrawOffsetWest.HasValue) return headCoverDrawOffsetWest.Value;
+            return Vector3.zero;
+        }
+    }
+
     public class CompProperties_CageTopGraphicVariation : CompProperties
     {
         public List<GraphicData> topGraphics;

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <DamageDef ParentName="Flame">
+    <defName>CE_ExecutionElectrocution</defName>
+    <label>execution electrocution</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <execution>true</execution>
+    <hediff>Burn</hediff>
+    <deathMessage>{0} has been executed by electric shock.</deathMessage>
+    <hasForcefulImpact>false</hasForcefulImpact>
+    <canInterruptJobs>false</canInterruptJobs>
+    <impactSoundType />
+    <armorCategory />
+  </DamageDef>
+
+</Defs>

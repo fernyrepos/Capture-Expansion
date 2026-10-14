@@ -15,4 +15,21 @@
       </li>
     </subSounds>
   </SoundDef>
+
+  <SoundDef>
+    <defName>CE_ElectricChairActivate</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>ElectricChairActivate</clipPath>
+          </li>
+        </grains>
+        <distRange>25~50</distRange>
+        <volumeRange>25</volumeRange>
+        <pitchRange>2</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
 </Defs>

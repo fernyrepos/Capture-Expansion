@@ -29,4 +29,10 @@
     <reportString>executing TargetB.</reportString>
     <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
   </JobDef>
+  <JobDef>
+    <defName>CE_ActivateElectricChair</defName>
+    <driverClass>CaptureExpansion.JobDriver_ActivateElectricChair</driverClass>
+    <reportString>executing TargetB.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
 </Defs>

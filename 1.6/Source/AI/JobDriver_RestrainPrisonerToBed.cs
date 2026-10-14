@@ -51,7 +51,6 @@ namespace CaptureExpansion
             yield return goToInteractionCell;
 
             var tieDown = Toils_General.WaitWith(TargetIndex.A, 180, useProgressBar: true);
-            tieDown.PlaySustainerOrSound(SoundDefOf.ChainToPlatform);
             yield return tieDown;
 
             yield return Toils_General.Do(() =>
