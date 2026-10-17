@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using CaptureExpansion.Compatibility.Ideology;
 using System.Linq;
 using RimWorld;
 using UnityEngine;
@@ -54,18 +55,26 @@ namespace CaptureExpansion
             }
 
             var victim = Platform?.HeldPawn;
+            bool ritualInProgress = victim != null && RitualExecutionUtility.RitualInProgress(Platform);
             yield return new Command_Action
             {
                 defaultLabel = "CE_ActivateGuillotine".Translate(),
                 defaultDesc = "CE_ActivateGuillotineDesc".Translate(),
                 icon = Icon,
-                disabled = victim == null,
-                disabledReason = "CE_ActivateGuillotineNoVictim".Translate(),
+                disabled = victim == null || ritualInProgress,
+                disabledReason = ritualInProgress ? "CE_RitualExecutionBusy".Translate() : "CE_ActivateGuillotineNoVictim".Translate(),
                 action = () =>
                 {
                     Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation(
                         "CE_ActivateGuillotineConfirm".Translate(victim.LabelShortCap),
-                        () => Activated = true,
+                        () =>
+                        {
+                            if (RitualExecutionUtility.RitualInProgress(Platform))
+                                Messages.Message("CE_RitualExecutionBusy".Translate(), parent,
+                                    MessageTypeDefOf.RejectInput, false);
+                            else
+                                Activated = true;
+                        },
                         destructive: true));
                 }
             };
